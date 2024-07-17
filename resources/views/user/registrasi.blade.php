@@ -21,11 +21,11 @@
             <div class="padding_infor_info">
                 @if($user->status == 'Belum registrasi')
                 <div class="alert alert-warning mb-0" role="alert" style="width:100%;">
-                    <i class="fa fa-bell text-warning"></i> Belum Registrasi STUDENT DAY - PKKMB {{date('Y')}}.
+                    <i class="fa fa-bell text-warning"></i> Belum Registrasi PKKMB FT {{date('Y')}}.
                 </div>
                 @elseif($user->status == 'Mengajukan registrasi')
                 <div class="alert alert-primary mb-0" role="alert" style="width:100%;">
-                    <i class="fa fa-circle-o text-primary"></i> Mengajukan Registrasi STUDENT DAY - PKKMB {{date('Y')}}.
+                    <i class="fa fa-circle-o text-primary"></i> Mengajukan Registrasi PKKMB FT {{date('Y')}}.
                 </div>
                 @elseif($user->status == 'Kesalahan data registrasi')
                 <div class="alert alert-danger mb-0" role="alert" style="width:100%;">
@@ -40,11 +40,11 @@
                 @endforeach
                 @elseif($user->status == 'Mengajukan perbaikan registrasi')
                 <div class="alert alert-primary mb-0" role="alert" style="width:100%;">
-                    <i class="fa fa-circle-o text-primary"></i> Mengajukan Perbaikan Registrasi STUDENT DAY - PKKMB {{date('Y')}}.
+                    <i class="fa fa-circle-o text-primary"></i> Mengajukan Perbaikan Registrasi PKKMB FT {{date('Y')}}.
                 </div>
                 @elseif($user->status == 'Teregistrasi')
                 <div class="alert alert-success mb-0" role="alert" style="width:100%;">
-                    <i class="fa fa-check text-success"></i> Registrasi STUDENT DAY - PKKMB {{date('Y')}} Berhasil.
+                    <i class="fa fa-check text-success"></i> Registrasi PKKMB FT {{date('Y')}} Berhasil.
                 </div>
                 @endif
             </div>
@@ -143,11 +143,11 @@
                         <label class="form-label">Jenis Kelamin <span style="color:#FF0000">*</span></label>
                         <select class="form-control" name="jenis_kelamin">
                             @foreach($jenis_kelamins as $jenis_kelamin)
-                                @if(old('jenis_kelamin') == $jenis_kelamin || (empty(old('jenis_kelamin')) && $user->jenis_kelamin == $jenis_kelamin))
-                                    <option value="{{$jenis_kelamin}}" selected>{{$jenis_kelamin}}</option>
-                                @else
-                                    <option value="{{$jenis_kelamin}}">{{$jenis_kelamin}}</option>
-                                @endif
+                            @if(old('jenis_kelamin') == $jenis_kelamin || (empty(old('jenis_kelamin')) && $user->jenis_kelamin == $jenis_kelamin))
+                            <option value="{{$jenis_kelamin}}" selected>{{$jenis_kelamin}}</option>
+                            @else
+                            <option value="{{$jenis_kelamin}}">{{$jenis_kelamin}}</option>
+                            @endif
                             @endforeach
                         </select>
                     </div>
@@ -155,11 +155,11 @@
                         <label class="form-label">Agama <span style="color:#FF0000">*</span></label>
                         <select class="form-control" name="agama">
                             @foreach($agamas as $agama)
-                                @if(old('agama') == $agama || (empty(old('agama')) && $user->agama == $agama))
-                                    <option value="{{$agama}}" selected>{{$agama}}</option>
-                                @else
-                                    <option value="{{$agama}}">{{$agama}}</option>
-                                @endif
+                            @if(old('agama') == $agama || (empty(old('agama')) && $user->agama == $agama))
+                            <option value="{{$agama}}" selected>{{$agama}}</option>
+                            @else
+                            <option value="{{$agama}}">{{$agama}}</option>
+                            @endif
                             @endforeach
                         </select>
                     </div>
@@ -167,11 +167,11 @@
                         <label class="form-label">Golongan Darah <span style="color:#FF0000">*</span></label>
                         <select class="form-control" name="golongan_darah">
                             @foreach($golongan_darahs as $golongan_darah)
-                                @if(old('golongan_darah') == $golongan_darah || (empty(old('golongan_darah')) && $user->golongan_darah == $golongan_darah))
-                                    <option value="{{$golongan_darah}}" selected>{{$golongan_darah}}</option>
-                                @else
-                                    <option value="{{$golongan_darah}}">{{$golongan_darah}}</option>
-                                @endif
+                            @if(old('golongan_darah') == $golongan_darah || (empty(old('golongan_darah')) && $user->golongan_darah == $golongan_darah))
+                            <option value="{{$golongan_darah}}" selected>{{$golongan_darah}}</option>
+                            @else
+                            <option value="{{$golongan_darah}}">{{$golongan_darah}}</option>
+                            @endif
                             @endforeach
                         </select>
                     </div>
@@ -292,11 +292,11 @@
                         <label class="form-label">Konsumsi <span style="color:#FF0000">*</span></label>
                         <select class="form-control" name="konsumsi">
                             @foreach($konsumsis as $konsumsi)
-                                @if(old('konsumsi') == $konsumsi || (empty(old('konsumsi')) && $user->konsumsi == $konsumsi))
-                                    <option value="{{$konsumsi}}" selected>{{$konsumsi}}</option>
-                                @else
-                                    <option value="{{$konsumsi}}">{{$konsumsi}}</option>
-                                @endif
+                            @if(old('konsumsi') == $konsumsi || (empty(old('konsumsi')) && $user->konsumsi == $konsumsi))
+                            <option value="{{$konsumsi}}" selected>{{$konsumsi}}</option>
+                            @else
+                            <option value="{{$konsumsi}}">{{$konsumsi}}</option>
+                            @endif
                             @endforeach
                         </select>
                     </div>
@@ -343,11 +343,11 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                @if($user->status == 'Belum registrasi')
+                                    @if($user->status == 'Belum registrasi')
                                     Mohon periksa kembali data registrasi. Apakah anda yakin ingin mengajukan registrasi?
-                                @else
+                                    @else
                                     Mohon periksa kembali data registrasi. Apakah anda yakin ingin mengajukan perbaikan registrasi?
-                                @endif
+                                    @endif
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary">Ya</button>
@@ -366,7 +366,7 @@
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 $('#pas_foto')
                     .attr('src', e.target.result)
                     .width(150)

@@ -290,7 +290,7 @@
                                 </thead>
                                 <tbody>
                                     @php
-                                        $i = 1;
+                                    $i = 1;
                                     @endphp
                                     @foreach($mahasiswa->organisasis as $organisasi)
                                     <tr>
@@ -300,7 +300,7 @@
                                         <td>{{$organisasi->tahun}}</td>
                                     </tr>
                                     @php
-                                        $i++;
+                                    $i++;
                                     @endphp
                                     @endforeach
                                 </tbody>
@@ -326,7 +326,7 @@
                                 </thead>
                                 <tbody>
                                     @php
-                                        $i = 1;
+                                    $i = 1;
                                     @endphp
                                     @foreach($mahasiswa->prestasis as $prestasi)
                                     <tr>
@@ -339,7 +339,7 @@
                                         </td>
                                     </tr>
                                     @php
-                                        $i++;
+                                    $i++;
                                     @endphp
                                     @endforeach
                                 </tbody>
@@ -414,7 +414,7 @@
                                 </thead>
                                 <tbody>
                                     @php
-                                        $i = 1;
+                                    $i = 1;
                                     @endphp
                                     @foreach($mahasiswa->notes as $note)
                                     <tr>
@@ -423,7 +423,7 @@
                                         <td>{{Carbon\Carbon::parse($note->created_at)->format('H:i:s d-m-Y')}}</td>
                                     </tr>
                                     @php
-                                        $i++;
+                                    $i++;
                                     @endphp
                                     @endforeach
                                 </tbody>
@@ -461,9 +461,9 @@
                 <div class="modal-body" style="max-height: calc(100vh - 210px); overflow-y: auto;">
                     <div class="">
                         @if($mahasiswa->status == "Teregistrasi")
-                            <a href="{{route('admin-download-biodata-registrasi', ['id' => $mahasiswa->id])}}" type="button" class="btn btn-success" target="_blank" style="width:100%;"><i class="fa fa-download"> Download Form Verifikasi Mahasiswa</i></a>
+                        <a href="{{route('admin-download-biodata-registrasi', ['id' => $mahasiswa->id])}}" type="button" class="btn btn-success" target="_blank" style="width:100%;"><i class="fa fa-download"> Download Form Verifikasi Mahasiswa</i></a>
                         @else
-                            <input type="text" class="form-control" value="{{'Mahasiswa belum Teregistrasi Student Day '.date('Y')}}" spellcheck="disabled" readonly>
+                        <input type="text" class="form-control" value="{{'Mahasiswa belum Teregistrasi PKKMB FT '.date('Y')}}" spellcheck="disabled" readonly>
                         @endif
                     </div>
                 </div>
@@ -478,7 +478,7 @@
         let program_studi = document.getElementById('showProgramStudi').value;
         let jalur_pendaftaran = document.getElementById('showJalurPendaftaran').value;
         let status = document.getElementById('showStatus').value;
-        let url = "{{route('admin-view-registrasi')}}"+"?program_studi="+program_studi+"&jalur_pendaftaran="+jalur_pendaftaran+"&status="+status;
+        let url = "{{route('admin-view-registrasi')}}" + "?program_studi=" + program_studi + "&jalur_pendaftaran=" + jalur_pendaftaran + "&status=" + status;
         window.location.href = url;
     }
 

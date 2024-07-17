@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{'SMFT - Student Day '.date('Y')}}</title>
+    <title>{{'SMFT - PKKMB FT '.date('Y')}}</title>
     <link rel="icon" href="{{url('/img/logo-pkkmb-ft-2024.png')}}" type="image/png" />
     <link rel="stylesheet" href="{{url('/pluto/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{url('/pluto/style.css')}}" />
@@ -60,11 +60,11 @@
                             <nav id="sidebar">
                                 <header class="sidebar_blog_2">
                                     @if(!empty($admin) && $admin->role == "Admin")
-                                    <h4 class="text-center">ADMIN - STUDENT DAY</h4>
+                                    <h4 class="text-center">ADMIN - PKKMB FT</h4>
                                     @elseif(!empty($admin) && $admin->role == "Kesekre")
-                                    <h4 class="text-center">KESEKRE - STUDENT DAY</h4>
+                                    <h4 class="text-center">KESEKRE - PKKMB FT</h4>
                                     @elseif(!empty($user))
-                                    <h4 class="text-center">STUDENT DAY</h4>
+                                    <h4 class="text-center">PKKMB FT</h4>
                                     @endif
                                     <ul class="list-unstyled components">
                                         @if(!empty($admin) && $admin->role == "Admin")

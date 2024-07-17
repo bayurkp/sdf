@@ -55,7 +55,7 @@
                     <li><a href="#">Galeri</a></li>
                     <li class="menu-has-children"><a href="#">Event</a>
                         <ul>
-                            <li><a href="{{route('login')}}">Student Day</a></li>
+                            <li><a href="{{route('login')}}">PKKMB FT</a></li>
                             <li><a href="#">GrAnaT</a></li>
                             <li><a href="#">Bazzar Teknik</a></li>
                             <li><a href="#">TBTN</a></li>
@@ -80,7 +80,7 @@
                     </li>
                     <li class="menu-has-children menu-active"><a href="#">Penerimaan Mahasiswa</a>
                         <ul>
-                            <li><a href="{{route('login')}}">Student Day</a></li>
+                            <li><a href="{{route('login')}}">PKKMB FT</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Kontak</a></li>
@@ -99,13 +99,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="daftarsd">Akses Ketentuan Verifikasi Student Day?</h5>
+                    <h5 class="modal-title" id="daftarsd">Akses Ketentuan Verifikasi PKKMB FT?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Pastikan anda menyetujui <strong>"SYARAT DAN KETENTUAN AKSES KETENTUAN VERIFIKASI STUDENT DAY {{date('Y')}}".</strong>
+                    Pastikan anda menyetujui <strong>"SYARAT DAN KETENTUAN AKSES KETENTUAN VERIFIKASI PKKMB FT {{date('Y')}}".</strong>
                 </div>
                 <div class="modal-footer">
                     <button onclick="location.href='/downloadBerkasVerif';" id="tombol" name="tombol" style="margin-bottom:14px;" class="btn btn-primary mt-3 "><i class="fa fa-paper-plane"></i>
@@ -122,18 +122,18 @@
                 <div id="about">
                     <div class="container">
                         <!-- <div class="col-lg-6 content order-lg-1 order-2"> -->
-                        <h2 style="color: #333; font-weight: 700; font-size: 32px;" class="title">Tentang Student Day
+                        <h2 style="color: #333; font-weight: 700; font-size: 32px;" class="title">Tentang PKKMB FT
                         </h2>
                         <p class="text-justify wow fadeInUp">
-                            Kegiatan Student Day merupakan suatu kegiatan yang menjadi rangkaian kegiatan
+                            Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan
                             penerimaan mahasiswa baru Fakultas Teknik angkatan. Pada kegiatan ini,
                             mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta
                             organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
                         </p>
                         <p class="text-justify wow fadeInUp" data-wow-delay="0.5s">
-                            PKKMB, Student Day dan BKM merupakan rangkaian dari kegiatan penerimaan mahasiswa
+                            PKKMB, PKKMB FT dan BKM merupakan rangkaian dari kegiatan penerimaan mahasiswa
                             baru di lingkungan Fakultas Teknik Universitas Udayana. Sebagaimana kegiatan penerimaan
-                            mahasiswa baru lainnya, PKKMB, Student Day, dan BKM ini merupakan kegiatan yang
+                            mahasiswa baru lainnya, PKKMB, PKKMB FT, dan BKM ini merupakan kegiatan yang
                             wajib diikuti yang nantinya akan mempengaruhi penginputan SKP, syarat yudisium,
                             dan kelulusan mahasiswa.
                         </p>
@@ -154,9 +154,9 @@
                                 <br>
                                 <p class="text-center wow fadeInUp">Peserta diharapkan untuk benar-benar memahami isi
                                     dari
-                                    ketentuan secara menyeluruh sehingga pada proses Verifikasi Student Day tidak
+                                    ketentuan secara menyeluruh sehingga pada proses Verifikasi PKKMB FT tidak
                                     melakukan
-                                    kesalahan.Ketentuan Verifikasi Student Day dapat diakses melalui tombol di bawah.
+                                    kesalahan.Ketentuan Verifikasi PKKMB FT dapat diakses melalui tombol di bawah.
                                     <br>
                                 </p>
                             </div>
@@ -171,12 +171,12 @@
                     <section id="facts">
                         <div class="container wow fadeIn">
                             <div class="section-header">
-                                <h3 class="section-title">Pengumuman Kelulusan<br> Student Day Fakultas Teknik {{date('Y')}}
+                                <h3 class="section-title">Pengumuman Kelulusan<br> PKKMB Fakultas Teknik {{date('Y')}}
                                 </h3>
                             </div>
                             <div>
                                 <br>
-                                <p class="text-center wow fadeInUp">Pengumuman kelulusan Student Day Fakultas Teknik
+                                <p class="text-center wow fadeInUp">Pengumuman kelulusan PKKMB Fakultas Teknik
                                     {{date('Y')}}
                                     dapat dilihat pada link berikut.
                                     <br>
@@ -232,7 +232,7 @@
                     <div class="info-pilihan">
                         <h5>Informasi Pilihan</h5>
                         <a href="{{route('login')}}">
-                            <h6>Student Day
+                            <h6>PKKMB FT
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script>

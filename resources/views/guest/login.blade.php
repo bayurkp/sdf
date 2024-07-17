@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SMFT - Student Day {{date('Y')}}</title>
+    <title>SMFT - PKKMB FT {{date('Y')}}</title>
     <link rel="stylesheet" href="{{url('/majesty/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{url('/majesty/vendors/base/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{url('/majesty/css/style.css')}}">
@@ -21,7 +21,7 @@
                             <div class="brand-logo text-center">
                                 <img src="{{url('/img/logo-pkkmb-ft-2024.png')}}" alt="logo">
                             </div>
-                            <h4 class="text-center">Student Day Fakultas Teknik {{date('Y')}}</h4>
+                            <h4 class="text-center">PKKMB Fakultas Teknik {{date('Y')}}</h4>
                             <form class="pt-3" action="{{route('login')}}" method="POST">
                                 @csrf
                                 <div class="form-group">

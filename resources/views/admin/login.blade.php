@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SMFT - Student Day {{date('Y')}}</title>
+    <title>SMFT - PKKMB FT {{date('Y')}}</title>
     <link rel="stylesheet" href="{{url('/majesty/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{url('/majesty/vendors/base/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{url('/majesty/css/style.css')}}">

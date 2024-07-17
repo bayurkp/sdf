@@ -4,7 +4,7 @@
 <div class="row column_title">
     <div class="col-md-12">
         <div class="page_title">
-        <div class="row">
+            <div class="row">
                 <div class="col" style="position: absolute; top: 50%; transform: translateY(-50%);">
                     <h2>Ubah Program Studi</h2>
                 </div>
@@ -32,7 +32,7 @@
                     <div class="mb-3">
                         <label class="form-label">Link Grup</label>
                         <input type="text" class="form-control @error('link_grup') is-invalid @enderror" name="link_grup" value="{{old('link_grup') ? old('link_grup') : $program_studi->link_grup}}" spellcheck="disabled" required>
-                        <small>*Link Grup Line untuk Peserta Student Day</small>
+                        <small>*Link Grup Line untuk Peserta PKKMB FT</small>
                         @error('link_grup')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -41,7 +41,7 @@
                     <div class="mb-3 row">
                         <div class="col-10">
                             <input class="form-control @error('qrcode') is-invalid @enderror" type="file" name="qrcode">
-                            <small>*Pamflet yang Berisi QR Code untuk Grup Line Peserta Student Day</small>
+                            <small>*Pamflet yang Berisi QR Code untuk Grup Line Peserta PKKMB FT</small>
                             <br>
                             <small>*Format File: JPG, PNG, JPEG</small>
                             @error('qrcode')

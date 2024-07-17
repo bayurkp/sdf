@@ -4,7 +4,7 @@
 <div class="row column_title">
     <div class="col-md-12">
         <div class="page_title">
-        <div class="row">
+            <div class="row">
                 <div class="col" style="position: absolute; top: 50%; transform: translateY(-50%);">
                     <h2>Tambah Pengumuman</h2>
                 </div>
@@ -40,16 +40,16 @@
                         <label class="form-label">Status munculkan otomatis <span style="color:#FF0000">*</span></label>
                         <select class="form-control" name="status">
                             @foreach($statuses as $status)
-                                @if(old('status') == $status)
-                                    <option value="{{$status}}" selected>{{$status}}</option>
-                                @else
-                                    <option value="{{$status}}">{{$status}}</option>
-                                @endif
+                            @if(old('status') == $status)
+                            <option value="{{$status}}" selected>{{$status}}</option>
+                            @else
+                            <option value="{{$status}}">{{$status}}</option>
+                            @endif
                             @endforeach
                         </select>
-                        <small>*Munculkan pengumuman secara otomatis tanpa diklik oleh Peserta Student Day</small>
+                        <small>*Munculkan pengumuman secara otomatis tanpa diklik oleh Peserta PKKMB FT</small>
                         <br>
-                        <small>*Hanya Satu Pengumuman saja yang akan Muncul secara Otomatis tanpa Diklik oleh Peserta Student Day</small>
+                        <small>*Hanya Satu Pengumuman saja yang akan Muncul secara Otomatis tanpa Diklik oleh Peserta PKKMB FT</small>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Gambar</label>
