@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Icon+Name">
-    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url('css/fontawesome-all.css')}}">
     <link rel="stylesheet" href="{{url('fontawesome/css/all.min.css')}}">
@@ -85,13 +85,13 @@
                     </li>
                     <li><a href="#">Kontak</a></li>
                 </ul>
-            </nav><
-        </div>
+            </nav>
+            < </div>
     </header>
     <div class="jumbotron jumbotron-fluid" style="background: #3C3B3F; background: -webkit-linear-gradient(to top, #605C3C, #3C3B3F);  background: linear-gradient(to top, #605C3C, #3C3B3F); height: 100vh;">
         <div class="container" style="margin-top: 10vh">
             <div class="text-center">
-                <img class="img-fluid mx-auto" src="{{url('img/logo-sd-2023.png')}}" style="max-height:70vh;" alt="">
+                <img class="img-fluid mx-auto" src="{{url('img/logo-pkkmb-ft-2024.png')}}" style="max-height:70vh;" alt="">
             </div>
         </div>
     </div>
@@ -108,8 +108,7 @@
                     Pastikan anda menyetujui <strong>"SYARAT DAN KETENTUAN AKSES KETENTUAN VERIFIKASI STUDENT DAY {{date('Y')}}".</strong>
                 </div>
                 <div class="modal-footer">
-                    <button onclick="location.href='/downloadBerkasVerif';" id="tombol" name="tombol"
-                        style="margin-bottom:14px;" class="btn btn-primary mt-3 "><i class="fa fa-paper-plane"></i>
+                    <button onclick="location.href='/downloadBerkasVerif';" id="tombol" name="tombol" style="margin-bottom:14px;" class="btn btn-primary mt-3 "><i class="fa fa-paper-plane"></i>
                         Lihat Ketentuan</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Kembali</button>
                 </div>
@@ -162,8 +161,7 @@
                                 </p>
                             </div>
                             <p class="text-center">
-                                <a data-toggle="modal" data-target="#daftar" id="verify"
-                                    style="border-radius:22px;color:white;" class="btn btn-info">Link Ketentuan
+                                <a data-toggle="modal" data-target="#daftar" id="verify" style="border-radius:22px;color:white;" class="btn btn-info">Link Ketentuan
                                     Verifikasi</a>
                             </p>
                         </div>
@@ -185,8 +183,7 @@
                                 </p>
                             </div>
                             <p class="text-center">
-                                <a target="_blank" href="/downloadKelulusan" style="border-radius:22px;color:white;"
-                                    class="btn btn-info">Download File Kelulusan</a>
+                                <a target="_blank" href="/downloadKelulusan" style="border-radius:22px;color:white;" class="btn btn-info">Download File Kelulusan</a>
                             </p>
                         </div>
                     </section>
@@ -201,14 +198,12 @@
                             <div>
                                 <div class="container my-3">
                                     <div class="text-center">
-                                        <img class="img-fluid mx-auto" src="{{url('img/logo-sd-2023.png')}}"
-                                            style="max-height:35vh;" alt="">
+                                        <img class="img-fluid mx-auto" src="{{url('img/logo-pkkmb-ft-2024.png')}}" style="max-height:35vh;" alt="">
                                     </div>
                                 </div>
                             </div>
                             <p class="text-center">
-                                <a href="/login" style="border-radius:23px;margin-top:10px"
-                                    class="btn btn-secondary btn-lg" aria-disabled="true">Login</a>
+                                <a href="/login" style="border-radius:23px;margin-top:10px" class="btn btn-secondary btn-lg" aria-disabled="true">Login</a>
                             </p>
                         </div>
                     </section>
@@ -217,8 +212,7 @@
     </main>
 
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -273,21 +267,15 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://twitter.com/smft_unud?lang=en" target="_blank" class="twitter"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="https://www.facebook.com/senat.ft.unud" target="_blank" class="facebook"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/smft_unud/" target="_blank" class="instagram"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="line://ti/p/@bye5870b" target="_blank" class="instagram"><i
-                                class="fab fa-line"></i></a>
+                        <a href="https://twitter.com/smft_unud?lang=en" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/senat.ft.unud" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/smft_unud/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="line://ti/p/@bye5870b" target="_blank" class="instagram"><i class="fab fa-line"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-4">
-                    <iframe style="height:300px;"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1972.1031456915207!2d115.21920857969029!3d-8.671922290645485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240ec7f9cc977%3A0xb424284c3310f82c!2sFakultas+Teknik+UNUD%2C+Kampus+Sudirman+-+Denpasar!5e0!3m2!1sen!2sid!4v1531969481290"
-                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe style="height:300px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1972.1031456915207!2d115.21920857969029!3d-8.671922290645485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240ec7f9cc977%3A0xb424284c3310f82c!2sFakultas+Teknik+UNUD%2C+Kampus+Sudirman+-+Denpasar!5e0!3m2!1sen!2sid!4v1531969481290" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
 
             </div>
