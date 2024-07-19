@@ -230,20 +230,17 @@ class UserRegistrasiController extends Controller
                 $encrypted = "krm-" . $user->nim . "-" . time();
                 $filename = Crypt::encryptString($encrypted) . "." . $krm->getClientOriginalExtension();
                 $path = "mahasiswa/krm/";
-                $putfile = Storage::putFileAs($path, $krm, $filename);
+                Storage::putFileAs($path, $krm, $filename);
                 $user->krm = $filename;
             }
 
             if (!empty($validated['bukti_transaksi'])) {
-                // ddd($request);
                 File::delete(storage_path('/app/mahasiswa/bukti_transaksi/' . $user->bukti_transaksi));
                 $bukti_transaksi = $request->file('bukti_transaksi');
                 $encrypted = "bukti-" . $user->nim . "-" . time();
                 $filename = Crypt::encryptString($encrypted) . "." . $bukti_transaksi->getClientOriginalExtension();
                 $path = "mahasiswa/bukti_transaksi/";
-                $putfile = Storage::putFileAs($path, $bukti_transaksi, $filename);
-
-                // ddd($putfile, $bukti_transaksi, $filename);
+                Storage::putFileAs($path, $bukti_transaksi, $filename);
                 $user->bukti_transaksi = $filename;
             }
 
