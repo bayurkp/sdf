@@ -178,7 +178,7 @@
                     @if(!empty($mahasiswa->krm))
                     <div class="mb-3">
                         <label class="form-label">Kartu Registrasi Mahasiswa (KRM) / Bukti Registrasi Online</label>
-                        <a href="{{route('admin-download-krm-registrasi', ['id' => $mahasiswa->id])}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"> Download KRM / Bukti Registrasi Online</i></a>
+                        <a href="{{route('admin-download-krm-registrasi', ['id' => $mahasiswa->id])}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"></i> Download KRM / Bukti Registrasi Online</a>
                     </div>
                     @endif
                     <div class="mb-3">
@@ -275,6 +275,12 @@
                         <label class="form-label">Penyakit Khusus</label>
                         <textarea class="form-control" rows="3" readonly disabled>{{$mahasiswa->penyakit_khusus}}</textarea>
                     </div>
+                    @if(!empty($mahasiswa->bukti_transaksi))
+                    <div class="mb-3">
+                        <label class="form-label">Bukti Transaksi</label>
+                        <a href="{{route('admin-download-bukti-transaksi-registrasi', ['id' => $mahasiswa->id])}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"></i> Download Bukti Transaksi</a>
+                    </div>
+                    @endif
                     <div class="mb-3">
                         <label class="form-label">Pengalaman Organisasi</label>
                         @if($mahasiswa->organisasi == 'Ya')

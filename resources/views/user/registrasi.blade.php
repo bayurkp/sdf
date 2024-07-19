@@ -308,6 +308,33 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        @if($user->status == 'Belum registrasi')
+                        <label class="form-label">Bukti Transaksi<span style="color:#FF0000">*</span></label>
+                        @else
+                        <label class="form-label">Bukti Transaksi</label>
+                        @endif
+                        <div class="d-flex">
+                            <div class="w-100">
+                                @if($user->status == 'Belum registrasi')
+                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" required>
+                                @else
+                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi">
+                                @endif
+                                <small>*Format file: PDF</small>
+                                <br>
+                                <small>*Ukuran File Maksimal 2 MB</small>
+                                @error('bukti_transaksi')
+                                <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
+                            </div>
+                            @if(!empty($user->bukti_transaksi))
+                            <div class="ml-2">
+                                <a href="{{route('download-bukti-transaksi')}}" class="btn btn-success py-2" style="margin-top: 1px;"><i class="fa fa-download"></i></a>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <div class="form-check">
                             @if($user->organisasi == 'Ya')
                             <input class="form-check-input" type="checkbox" value="1" name="organisasi" checked>
@@ -409,7 +436,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Kartu Registrasi Mahasiswa (KRM) / Bukti Registrasi Online</label>
-                    <a href="{{route('download-krm')}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"> Download KRM / Bukti Registrasi Online</i></a>
+                    <a href="{{route('download-krm')}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"></i> Download KRM / Bukti Registrasi Online</a>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Nama Panggilan</label>
@@ -498,6 +525,10 @@
                 <div class="mb-3">
                     <label class="form-label">Penyakit Khusus</label>
                     <textarea class="form-control" rows="3" readonly disabled>{{$user->penyakit_khusus}}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Bukti Transaksi</label>
+                    <a href="{{route('download-bukti-transaksi')}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"></i> Download Bukti Transaksi</a>
                 </div>
                 <div class="mb-3">
                     <div class="form-check">
