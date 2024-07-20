@@ -467,7 +467,7 @@
                 <div class="modal-body" style="max-height: calc(100vh - 210px); overflow-y: auto;">
                     <div class="">
                         @if($mahasiswa->status == "Teregistrasi")
-                        <a href="{{route('admin-download-biodata-registrasi', ['id' => $mahasiswa->id])}}" type="button" class="btn btn-success" target="_blank" style="width:100%;"><i class="fa fa-download"> Download Form Verifikasi Mahasiswa</i></a>
+                        <a href="{{route('admin-download-biodata-registrasi', ['id' => $mahasiswa->id])}}" type="button" class="btn btn-success" target="_blank" style="width:100%;"><i class="fa fa-download"></i> Download Form Verifikasi Mahasiswa</a>
                         @else
                         <input type="text" class="form-control" value="{{'Mahasiswa belum Teregistrasi PKKMB FT '.date('Y')}}" spellcheck="disabled" readonly>
                         @endif
