@@ -345,10 +345,42 @@
                     </div>
                     <div class="mb-3">
                         @if($user->status == 'Belum registrasi')
-                        <label class="form-label">Bukti Transaksi<span style="color:#FF0000">*</span></label>
+                        <label class="form-label">Bukti Transaksi<span style="color:#FF0000"> *</span></label>
                         @else
                         <label class="form-label">Bukti Transaksi</label>
                         @endif
+                        <div class="mb-2">
+                            <table>
+                                <tr>
+                                    <td style="padding-right: 10px; vertical-align: top;">
+                                        *
+                                    </td>
+                                    <td>
+                                        <small>
+                                            Mohon untuk melakukan pembayaran sebesar Rp<span id="kitPrice"></span>,00 ke nomor rekening berikut:
+                                            <br />
+                                            BNI 1448933532 a/n Ni Putu Intan Sri Diana
+                                        </small>
+                                    </td>
+                                <tr>
+                                    <td style="padding-right: 10px; vertical-align: top;">
+                                        *
+                                    </td>
+                                    <td>
+                                        <small>
+                                            Setelah berhasil membayar, silakan unggah bukti transaksi dan konfirmasi ke kontak berikut:
+                                            <br />
+                                            Fara: 085648315785 (Teknik Mesin & Arsitektur)
+                                            <br />
+                                            Nola: 083116104562 (Teknik Industri & Teknik Sipil)
+                                            <br />
+                                            Ita: 087850166533 (Teknik Elektro, Teknik Lingkungan, Teknologi Informasi)
+                                        </small>
+                                    </td>
+                                </tr>
+                                </tr>
+                            </table>
+                        </div>
                         <div class="d-flex">
                             <div class="w-100">
                                 @if($user->status == 'Belum registrasi')
@@ -425,6 +457,16 @@
     </div>
 </div>
 <script type="text/javascript">
+    $(document).ready(function() {
+        $('#kitPrice').text('20.000');
+        $('select[name=paket_pkkmb_kit]').change(function() {
+            kit = $(this).val();
+            let price = kit == 'Paket 1' ? '20.000' : '30.000';
+
+            $('#kitPrice').text(price);
+        });
+    });
+
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -561,6 +603,10 @@
                 <div class="mb-3">
                     <label class="form-label">Penyakit Khusus</label>
                     <textarea class="form-control" rows="3" readonly disabled>{{$user->penyakit_khusus}}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Paket PKKMB Kit</label>
+                    <input type="text" class="form-control" value="{{$user->paket_pkkmb_kit}}" readonly disabled>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Bukti Transaksi</label>
