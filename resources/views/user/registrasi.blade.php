@@ -98,7 +98,7 @@
                             @endif
                             <small>*Upload Pas Foto dengan Ketentuan Bebas Rapi</small>
                             <br>
-                            <small>*Ukuran File Maksimal 2 MB</small>
+                            <small>*Ukuran File Maksimal 1 MB</small>
                             <br>
                             <small>*Format File: JPG, PNG, JPEG</small>
                             @error('pas_foto')
@@ -141,7 +141,7 @@
                                 @endif
                                 <small>*Format file: PDF</small>
                                 <br>
-                                <small>*Ukuran File Maksimal 2 MB</small>
+                                <small>*Ukuran File Maksimal 1 MB</small>
                                 @error('nama_panggilan')
                                 <div class="invalid-feedback">{{$message}}</div>
                                 @enderror
@@ -357,7 +357,7 @@
                                     </td>
                                     <td>
                                         <small>
-                                            Mohon untuk melakukan pembayaran sebesar Rp<span id="kitPrice"></span>,00 ke nomor rekening berikut:
+                                            Mohon untuk melakukan pembayaran sesuai dengan nominal ke nomor rekening berikut:
                                             <br />
                                             BNI 1448933532 a/n Ni Putu Intan Sri Diana
                                         </small>
@@ -386,11 +386,11 @@
                                 @if($user->status == 'Belum registrasi')
                                 <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" required accept="application/pdf">
                                 @else
-                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" accept="application/pdf">
+                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" accept="application/pdf, image/png, image/jpeg, image/jpg">
                                 @endif
                                 <small>*Format file: PDF</small>
                                 <br>
-                                <small>*Ukuran File Maksimal 2 MB</small>
+                                <small>*Ukuran File Maksimal 1 MB</small>
                                 @error('bukti_transaksi')
                                 <div class="invalid-feedback">{{$message}}</div>
                                 @enderror
@@ -457,16 +457,6 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#kitPrice').text('20.000');
-        $('select[name=paket_pkkmb_kit]').change(function() {
-            kit = $(this).val();
-            let price = kit == 'Paket 1' ? '20.000' : '30.000';
-
-            $('#kitPrice').text(price);
-        });
-    });
-
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

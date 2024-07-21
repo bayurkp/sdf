@@ -73,8 +73,8 @@ class UserRegistrasiController extends Controller
 
         if ($user->status == 'Belum registrasi') {
             $validated = $request->validate([
-                'pas_foto' => 'required|file|image|mimes:jpg,png,jpeg|max:2048',
-                'krm' => 'required|file|mimes:pdf|max:2048',
+                'pas_foto' => 'required|file|image|mimes:jpg,png,jpeg|max:1024',
+                'krm' => 'required|file|mimes:pdf|max:1024',
                 'nama_panggilan' => 'required|string|min:1|max:50',
                 'jenis_kelamin' => 'required|string|in:Laki-laki,Perempuan',
                 'agama' => 'required|string|in:Hindu,Islam,Budha,Konghucu,Kristen Protestan,Kristen Katolik,Kristen Advent,Penganut Kepercayaan',
@@ -98,7 +98,7 @@ class UserRegistrasiController extends Controller
                 'konsumsi' => 'required|in:Non-Vegetarian,Vegetarian',
                 'penyakit_khusus' => 'nullable|string|min:1|max:200',
                 'paket_pkkmb_kit' => 'required|in:Paket 1,Paket 2',
-                'bukti_transaksi' => 'required|file|mimes:pdf|max:2048'
+                'bukti_transaksi' => 'required|file|mimes:pdf,jpg,png,jpeg|max:1024'
             ]);
 
             $user->nama_panggilan = $validated['nama_panggilan'];
@@ -175,8 +175,8 @@ class UserRegistrasiController extends Controller
             return redirect()->route('view-registrasi')->with(["toast" => ["type" => "success", "message" => "Berhasil mengajukan registrasi."]]);
         } else if ($user->status == 'Kesalahan data registrasi') {
             $validated = $request->validate([
-                'pas_foto' => 'nullable|file|image|mimes:jpg,png,jpeg|max:2048',
-                'krm' => 'nullable|file|mimes:pdf|max:2048',
+                'pas_foto' => 'nullable|file|image|mimes:jpg,png,jpeg|max:1024',
+                'krm' => 'nullable|file|mimes:pdf|max:1024',
                 'nama_panggilan' => 'required|string|min:1|max:50',
                 'jenis_kelamin' => 'required|string|in:Laki-laki,Perempuan',
                 'agama' => 'required|string|in:Hindu,Islam,Budha,Konghucu,Kristen Protestan,Kristen Katolik,Kristen Advent,Penganut Kepercayaan',
@@ -199,8 +199,8 @@ class UserRegistrasiController extends Controller
                 'nama_ibu' => 'required|string|min:1|max:100',
                 'konsumsi' => 'required|in:Non-Vegetarian,Vegetarian',
                 'penyakit_khusus' => 'nullable|string|min:1|max:200',
-                'pakket_pkkmb_kit' => 'required|in:Paket 1,Paket 2',
-                'bukti_transaksi' => 'nullable|file|mimes:pdf|max:2048'
+                'paket_pkkmb_kit' => 'required|in:Paket 1,Paket 2',
+                'bukti_transaksi' => 'nullable|file|mimes:pdf,jpg,png,jpeg|max:1024'
             ]);
 
             $user->nama_panggilan = $validated['nama_panggilan'];
