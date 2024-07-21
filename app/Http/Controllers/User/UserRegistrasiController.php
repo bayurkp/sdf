@@ -47,7 +47,20 @@ class UserRegistrasiController extends Controller
             'Non-Vegetarian',
             'Vegetarian'
         );
-        return view('user.registrasi', compact('user', 'notes', 'jenis_kelamins', 'agamas', 'golongan_darahs', 'konsumsis'));
+        $paket_pkkmb_kits = array(
+            [
+                'paket' => 'Paket 1',
+                'harga' => 20_000,
+                'deskripsi' => 'Buku Panduan, Kertas Resume',
+            ],
+            [
+                'paket' => 'Paket 2',
+                'harga' => 30_000,
+                'deskripsi' => 'Buku Panduan, Kertas Resume, Tali Name Tag, Pulpen Hitam, Pulpen Biru',
+            ]
+        );
+
+        return view('user.registrasi', compact('user', 'notes', 'jenis_kelamins', 'agamas', 'golongan_darahs', 'konsumsis', 'paket_pkkmb_kits'));
     }
 
     public function registrasi(Request $request): RedirectResponse
@@ -84,6 +97,7 @@ class UserRegistrasiController extends Controller
                 'nama_ibu' => 'required|string|min:1|max:100',
                 'konsumsi' => 'required|in:Non-Vegetarian,Vegetarian',
                 'penyakit_khusus' => 'nullable|string|min:1|max:200',
+                'paket_pkkmb_kit' => 'required|in:Paket 1,Paket 2',
                 'bukti_transaksi' => 'required|file|mimes:pdf|max:2048'
             ]);
 
@@ -111,6 +125,7 @@ class UserRegistrasiController extends Controller
             if (!empty($validated['penyakit_khusus'])) {
                 $user->penyakit_khusus = $validated['penyakit_khusus'];
             }
+            $user->paket_pkkmb_kit = $validated['paket_pkkmb_kit'];
 
             $pas_foto = $request->file('pas_foto');
             $encrypted = "pas_foto-" . $user->nim . "-" . time();
@@ -184,6 +199,7 @@ class UserRegistrasiController extends Controller
                 'nama_ibu' => 'required|string|min:1|max:100',
                 'konsumsi' => 'required|in:Non-Vegetarian,Vegetarian',
                 'penyakit_khusus' => 'nullable|string|min:1|max:200',
+                'pakket_pkkmb_kit' => 'required|in:Paket 1,Paket 2',
                 'bukti_transaksi' => 'nullable|file|mimes:pdf|max:2048'
             ]);
 
@@ -213,6 +229,7 @@ class UserRegistrasiController extends Controller
             } else {
                 $user->penyakit_khusus = null;
             }
+            $user->paket_pkkmb_kit = $validated['paket_pkkmb_kit'];
 
             if (!empty($validated['pas_foto'])) {
                 File::delete(public_path('/mahasiswa/pas_foto/' . $user->pas_foto));

@@ -275,6 +275,10 @@
                         <label class="form-label">Penyakit Khusus</label>
                         <textarea class="form-control" rows="3" readonly disabled>{{$mahasiswa->penyakit_khusus}}</textarea>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Paket PKKMB Kit</label>
+                        <input type="text" class="form-control" value="{{$mahasiswa->paket_pkkmb_kit}}" readonly disabled>
+                    </div>
                     @if(!empty($mahasiswa->bukti_transaksi))
                     <div class="mb-3">
                         <label class="form-label">Bukti Transaksi</label>
