@@ -52,6 +52,27 @@
     </div>
 </div>
 
+@if ($errors->any())
+<div class="row">
+    <div class="col">
+        <div class="white_shd full margin_bottom_30 padding_40">
+            <div class="padding_infor_info">
+                <div class="alert alert-danger mb-0" role="alert" style="width:100%;">
+                    <div class="mb-2">
+                        <i class="fa fa-exclamation-circle text-danger"></i> Terdapat kesalahan pada formulir yang diajukan, yaitu:
+                    </div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>• {{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
+
 @if($user->status == 'Belum registrasi' || $user->status == 'Kesalahan data registrasi')
 <div class="row">
     <div class="col">
@@ -70,10 +91,10 @@
                         <div class="w-100 mt-2 ml-2">
                             @if($user->status == 'Belum registrasi')
                             <label class="form-label">Pas Foto <span style="color:#FF0000">*</span></label>
-                            <input class="form-control @error('pas_foto') is-invalid @enderror" type="file" name="pas_foto" required onchange="readURL(this);">
+                            <input class="form-control @error('pas_foto') is-invalid @enderror" type="file" name="pas_foto" required onchange="readURL(this);" accept="image/png, image/jpeg, image/jpg">
                             @else
                             <label class="form-label">Pas Foto</label>
-                            <input class="form-control @error('pas_foto') is-invalid @enderror" type="file" name="pas_foto" onchange="readURL(this);">
+                            <input class="form-control @error('pas_foto') is-invalid @enderror" type="file" name="pas_foto" onchange="readURL(this);" accept="image/png, image/jpeg, image/jpg">
                             @endif
                             <small>*Upload Pas Foto dengan Ketentuan Bebas Rapi</small>
                             <br>
@@ -114,9 +135,9 @@
                         <div class="d-flex">
                             <div class="w-100">
                                 @if($user->status == 'Belum registrasi')
-                                <input class="form-control @error('krm') is-invalid @enderror" type="file" name="krm" required>
+                                <input class="form-control @error('krm') is-invalid @enderror" type="file" name="krm" required accept="application/pdf">
                                 @else
-                                <input class="form-control @error('krm') is-invalid @enderror" type="file" name="krm">
+                                <input class="form-control @error('krm') is-invalid @enderror" type="file" name="krm" accept="application/pdf">
                                 @endif
                                 <small>*Format file: PDF</small>
                                 <br>
@@ -308,6 +329,21 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Paket PKKMB Kit <span style="color:#FF0000">*</span></label>
+                        <select class="form-control" name="paket_pkkmb_kit">
+                            @foreach($paket_pkkmb_kits as $paket_pkkmb_kit)
+                            @php
+                            $deskripsi_paket = $paket_pkkmb_kit['paket'] . ' - Rp' . number_format($paket_pkkmb_kit['harga'], 0, ',', '.') . ',00 - ' . $paket_pkkmb_kit['deskripsi'];
+                            @endphp
+                            @if(old('paket_pkkmb_kit') == $paket_pkkmb_kit['paket'] || (empty(old('paket_pkkmb_kit')) && $user->paket_pkkmb_kit == $paket_pkkmb_kit['paket']))
+                            <option value="{{$paket_pkkmb_kit['paket']}}" selected>{{$deskripsi_paket}}</option>
+                            @else
+                            <option value="{{$paket_pkkmb_kit['paket']}}">{{$deskripsi_paket}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         @if($user->status == 'Belum registrasi')
                         <label class="form-label">Bukti Transaksi<span style="color:#FF0000">*</span></label>
                         @else
@@ -316,9 +352,9 @@
                         <div class="d-flex">
                             <div class="w-100">
                                 @if($user->status == 'Belum registrasi')
-                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" required>
+                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" required accept="application/pdf">
                                 @else
-                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi">
+                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" accept="application/pdf">
                                 @endif
                                 <small>*Format file: PDF</small>
                                 <br>
