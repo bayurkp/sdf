@@ -55,7 +55,7 @@
                 <h1 class="text-[#c3872e] text-base xl:text-lg">PKKMB FT 2024</h1>
             </div>
             <nav id="nav-menu-container">
-                <ul class="nav-menu flex items-center space-x-6 text-base xl:text-lg">
+                <ul class="nav-menu flex items-center space-x-6 text-base 2xl:text-lg">
                     <li class="menu-active"><a href="#home">Home</a></li>
                     <li class=""><a href="#about">Tentang</a></li>
                     <li class="menu-has-children"><a href="#program-kerja">Program Kerja</a></li>
@@ -86,25 +86,16 @@
 
         {{-- section about --}}
         <section id="about">
-            {{-- about smft --}}
+            {{-- about bpmft --}}
             <div class="flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-10">
                 <div class="about-image w-full md:w-1/2 flex justify-center">
-                    <img src="{{ url('img/logo-smft.png') }}" class="w-44 md:w-1/2" alt="">
+                    <img src="{{ url('img/logo-bpmft.png') }}" class="w-44 md:w-1/2" alt="">
                 </div>
                 <div class="about-text w:full md:w-1/2">
-                    <p class="w-fit relative text-[#c3872e] font-bold text-xl capitalize mb-2 pb-1 after:absolute after:w-full after:h-[1px] after:rounded-full after:bottom-0 after:left-0 after:bg-[#c3872e] uppercase">SMFT</p>
-                    <h2 class="text-gray-800 font-bold text-3xl sm:text-4xl 2xl:text-6xl uppercase">Senat Mahasiswa Fakultas Teknik</h2>
-                    <p class="text-gray-600 mt-2 mb-1 2xl:text-xl">
-                        Senat Mahasiswa Fakultas Teknik (SMFT) SMFT Unud berfungsi sebagai lembaga eksekutif. SMFT Unud mempunyai tugas pokok: Mengkoordinasikan dan menyelenggarakan kegiatan kemahasiswaan dalam bidang ekstrakurikuler. Memberikan pendapat, usul, saran dan memperjuangkan aspirasi mahasiswa pada pimpinan FT Unud. Melaksanakan hasil-hasil Musma FT Unud.
-                    </p>
-                </div>
-            </div>
-
-            {{-- about bpmft --}}
-            <div class="flex flex-col-reverse md:flex-row  items-center justify-center pb-20 px-6 md:px-10">
-                <div class="about-text w-full md:w-1/2">
                     <p class="w-fit relative text-red-500 font-bold text-xl capitalize mb-2 pb-1 after:absolute after:w-full after:h-[1px] after:rounded-full after:bottom-0 after:left-0 after:bg-red-500 uppercase">BPMFT</p>
-                    <h2 class="text-gray-800 font-bold text-3xl sm:text-4xl 2xl:text-6xl uppercase">Badan Perwakilan Mahasiswa Fakultas Teknik</h2>
+                    <h2 class="text-gray-800 font-bold text-3xl sm:text-4xl 2xl:text-6xl uppercase">
+                        Badan Perwakilan Mahasiswa Fakultas Teknik
+                    </h2>
                     <p class="text-gray-600 mt-2 mb-1 2xl:text-xl">
                         Badan Perwakilan Mahasiswa Fakultas Teknik (BPMFT) di Universitas Udayana adalah badan yang berfungsi sebagai legislator, pengawas, dan fasilitator bagi mahasiswa di Fakultas Teknik. Tugas utama BPMFT meliputi:
                         Melakukan fungsi legislasi untuk Senat Mahasiswa Fakultas Teknik (SMFT),
@@ -114,8 +105,21 @@
                         Melakukan pengawasan dan koordinasi dengan SMFT dan Himpunan Mahasiswa Jurusan (HMJ)
                     </p>
                 </div>
+            </div>
+
+            {{-- about smft --}}
+            <div class="flex flex-col-reverse md:flex-row  items-center justify-center pb-20 px-6 md:px-10">
+                <div class="about-text w-full md:w-1/2">
+                    <p class="w-fit relative text-[#c3872e] font-bold text-xl capitalize mb-2 pb-1 after:absolute after:w-full after:h-[1px] after:rounded-full after:bottom-0 after:left-0 after:bg-[#c3872e] uppercase">SMFT</p>
+                    <h2 class="text-gray-800 font-bold text-3xl sm:text-4xl 2xl:text-6xl uppercase">
+                        Senat Mahasiswa Fakultas Teknik
+                    </h2>
+                    <p class="text-gray-600 mt-2 mb-1 2xl:text-xl">
+                        Senat Mahasiswa Fakultas Teknik (SMFT) SMFT Unud berfungsi sebagai lembaga eksekutif. SMFT Unud mempunyai tugas pokok: Mengkoordinasikan dan menyelenggarakan kegiatan kemahasiswaan dalam bidang ekstrakurikuler. Memberikan pendapat, usul, saran dan memperjuangkan aspirasi mahasiswa pada pimpinan FT Unud. Melaksanakan hasil-hasil Musma FT Unud.
+                    </p>
+                </div>
                 <div class="about-image w-full md:w-1/2 flex justify-center">
-                    <img src="{{ url('img/logo-bpmft.png') }}" class="w-44 md:w-1/2" alt="">
+                    <img src="{{ url('img/logo-smft.png') }}" class="w-44 md:w-1/2" alt="">
                 </div>
             </div>
         </section>
