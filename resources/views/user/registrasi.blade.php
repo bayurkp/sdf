@@ -388,7 +388,7 @@
                                 @else
                                 <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" accept="application/pdf, image/png, image/jpeg, image/jpg">
                                 @endif
-                                <small>*Format file: PDF</small>
+                                <small>*Format file: PDF, JPG, PNG, JPEG</small>
                                 <br>
                                 <small>*Ukuran File Maksimal 1 MB</small>
                                 @error('bukti_transaksi')
