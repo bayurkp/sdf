@@ -10,6 +10,19 @@
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col">
+        <div class="white_shd full margin_bottom_30 padding_40">
+            <div class="padding_infor_info">
+                <div class="alert alert-warning mb-0" role="alert" style="width:100%;">
+                    <i class="fa fa-bell text-warning"></i> Mohon untuk mengganti password sebelum melanjutkan proses registrasi.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col">
         <div class="white_shd full margin_bottom_30">
