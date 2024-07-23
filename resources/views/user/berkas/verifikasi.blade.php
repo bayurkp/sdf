@@ -81,9 +81,9 @@
 <body>
     <table class="tabel1">
         <tr>
-            <td rowspan="6" style='width: 5%;'><img src="{{ public_path('img/UNUD.png') }}" alt="" height="100px" width="100px"></td>
+            <td rowspan="6" style='width: 5%;'><img src="{{ public_path('img/logo-unud.png') }}" alt="" height="100px" width="100px"></td>
             <td style='width: 90%;'>&nbsp;</td>
-            <td rowspan="6" style='width: 5%;'><img src="{{ public_path('img/TEKNIK_1.png') }}" alt="" height="100px" width="100px"></td>
+            <td rowspan="6" style='width: 5%;'><img src="{{ public_path('img/logo-teknik.png') }}" alt="" height="100px" width="100px"></td>
         </tr>
         <tr>
         </tr>

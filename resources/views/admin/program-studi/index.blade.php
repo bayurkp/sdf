@@ -4,7 +4,7 @@
 <div class="row column_title">
     <div class="col-md-12">
         <div class="page_title">
-        <div class="row">
+            <div class="row">
                 <div class="col" style="position: absolute; top: 50%; transform: translateY(-50%);">
                     <h2>Program Studi</h2>
                 </div>
@@ -27,10 +27,10 @@
                 </div>
                 <div class="col">
                     <select class="form-control" id="showRow" onchange="searchFunction()" style="max-width:fit-content">
-                        <option selected value="20">Filter</option>
-                        <option value="50">Show 50 Data</option>
-                        <option value="100">Show 100 Data</option>
-                        <option value="0">Show All</option>
+                        <option selected value="20">Tampilkan</option>
+                        <option value="50">50 Baris</option>
+                        <option value="100">100 Baris</option>
+                        <option value="0">100 Baris</option>
                     </select>
                 </div>
                 <div class="col">
@@ -62,9 +62,9 @@
                                 <td>{{$program_studi->nama}}</td>
                                 <td>{{$program_studi->link_grup ? $program_studi->link_grup : "-"}}</td>
                                 @if(!empty($program_studi->file_qr))
-                                    <td>Ada</td>
+                                <td>Ada</td>
                                 @else
-                                    <td>Tidak ada</td>
+                                <td>Tidak ada</td>
                                 @endif
                                 <td class="text-center">
                                     <a href="{{route('admin-read-program-studi', ['id' => $program_studi->id])}}"><button type="button" class="btn btn-primary"><i class="fa fa-book text-white"></i></button></a>
