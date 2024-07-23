@@ -47,6 +47,12 @@
                     <i class="fa fa-check text-success"></i> Registrasi PKKMB FT {{date('Y')}} Berhasil.
                 </div>
                 @endif
+
+                @if($user->status != 'Teregistrasi')
+                <div class="alert alert-info mb-0 mt-3" role="alert" style="width:100%;">
+                    <i class="fa fa-info-circle text-info"></i> Lakukan <i>refresh</i> secara berkala untuk mengecek status terbaru.
+                </div>
+                @endif
             </div>
         </div>
     </div>
