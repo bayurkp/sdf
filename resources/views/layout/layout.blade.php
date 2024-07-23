@@ -96,7 +96,7 @@
                                         <li><a href="{{route('view-registrasi')}}"><i class="fa fa-graduation-cap blue1_color"></i> <span>Registrasi</span></a></li>
                                         @endif
                                         @if(!empty($user) && $user->status == "Teregistrasi")
-                                        <li><a href="{{route('view-qrcode')}}"><i class="fa fa-qrcode blue2_color"></i> <span>QR Code</span></a></li>
+                                        <li><a href="{{route('view-group-chat')}}"><i class="fa fa-qrcode blue2_color"></i> <span>Group Chat</span></a></li>
                                         <li><a href="{{route('view-berkas')}}"><i class="fa fa-file red_color"></i> <span>Berkas</span></a></li>
                                         @endif
                                         @if(!empty($user))

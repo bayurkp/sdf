@@ -86,7 +86,7 @@ Route::middleware(['throttle:60,1'])->group(function () {
     });
 
     Route::middleware([MahasiswaTeregistrasi::class])->group(function () {
-        Route::get('/qrcode', [UserQrcodeController::class, 'index'])->name('view-qrcode');
+        Route::get('/group-chat', [UserQrcodeController::class, 'index'])->name('view-group-chat');
         Route::get('/link-qrcode', [UserQrcodeController::class, 'link'])->name('link-qrcode');
 
         Route::get('/berkas', [UserBerkasController::class, 'index'])->name('view-berkas');
