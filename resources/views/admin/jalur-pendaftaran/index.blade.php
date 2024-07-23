@@ -4,7 +4,7 @@
 <div class="row column_title">
     <div class="col-md-12">
         <div class="page_title">
-        <div class="row">
+            <div class="row">
                 <div class="col" style="position: absolute; top: 50%; transform: translateY(-50%);">
                     <h2>Jalur Pendaftaran</h2>
                 </div>
@@ -27,10 +27,10 @@
                 </div>
                 <div class="col">
                     <select class="form-control" id="showRow" onchange="searchFunction()" style="max-width:fit-content">
-                        <option selected value="20">Filter</option>
-                        <option value="50">Show 50 Data</option>
-                        <option value="100">Show 100 Data</option>
-                        <option value="0">Show All</option>
+                        <option selected value="20">Tampilkan</option>
+                        <option value="50">50 Baris</option>
+                        <option value="100">100 Baris</option>
+                        <option value="0">100 Baris</option>
                     </select>
                 </div>
                 <div class="col">

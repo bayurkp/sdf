@@ -33,10 +33,10 @@
                 </div>
                 <div class="col">
                     <select class="form-control" id="showRow" onchange="searchFunction()" style="max-width:fit-content">
-                        <option selected value="20">Filter</option>
-                        <option value="50">Show 50 Data</option>
-                        <option value="100">Show 100 Data</option>
-                        <option value="0">Show All</option>
+                        <option selected value="20">Tampilkan</option>
+                        <option value="50">50 Baris</option>
+                        <option value="100">100 Baris</option>
+                        <option value="0">100 Baris</option>
                     </select>
                 </div>
                 <div class="col">
