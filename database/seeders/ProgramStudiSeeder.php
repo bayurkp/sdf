@@ -13,13 +13,13 @@ class ProgramStudiSeeder extends Seeder
     public function run(): void
     {
         $program_studis = [
-            'Arsitektur',
-            'Teknik Elektro',
-            'Teknik Mesin',
-            'Teknologi Informasi',
             'Teknik Sipil',
-            'Teknik Industri',
+            'Arsitektur',
+            'Teknik Mesin',
+            'Teknik Elektro',
+            'Teknologi Informasi',
             'Teknik Lingkungan',
+            'Teknik Industri',
         ];
 
         foreach ($program_studis as $program_studi) {

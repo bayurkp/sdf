@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\JalurPendaftaran;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Note;
 use App\Models\Organisasi;
+use App\Models\PeriodePendaftaran;
 use App\Models\Prestasi;
 use App\Models\User;
+use Closure;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Crypt;
@@ -22,11 +25,12 @@ class UserRegistrasiController extends Controller
     public function viewRegistrasi(): View
     {
         $user =  Auth::guard('user')->user();
-        $notes = Note::where('user_id', $user->id)->orderBy('id', 'DESC')->get();
+        $notes = Note::where('user_id', $user->id)->orderBy('id', 'desc')->get();
         $jenis_kelamins = array(
             'Laki-laki',
             'Perempuan',
         );
+
         $agamas = array(
             'Hindu',
             'Islam',
@@ -37,16 +41,19 @@ class UserRegistrasiController extends Controller
             'Kristen Advent',
             'Penganut Kepercayaan'
         );
+
         $golongan_darahs = array(
             'A',
             'AB',
             'B',
             'O'
         );
+
         $konsumsis = array(
             'Non-Vegetarian',
             'Vegetarian'
         );
+
         $paket_pkkmb_kits = array(
             [
                 'paket' => 'Paket 1',
@@ -55,12 +62,14 @@ class UserRegistrasiController extends Controller
             ],
             [
                 'paket' => 'Paket 2',
-                'harga' => 30_000,
-                'deskripsi' => 'Buku Panduan, Kertas Resume, Tali Name Tag, Pulpen Hitam, Pulpen Biru',
+                'harga' => 35_000,
+                'deskripsi' => 'Buku Panduan, Kertas Resume, Tali Nametag, Pulpen Hitam dan (warna prodi), Paper Bag',
             ]
         );
 
-        return view('user.registrasi', compact('user', 'notes', 'jenis_kelamins', 'agamas', 'golongan_darahs', 'konsumsis', 'paket_pkkmb_kits'));
+        $jalur_pendaftarans = JalurPendaftaran::all();
+
+        return view('user.registrasi', compact('user', 'jalur_pendaftarans', 'notes', 'jenis_kelamins', 'agamas', 'golongan_darahs', 'konsumsis', 'paket_pkkmb_kits'));
     }
 
     public function registrasi(Request $request): RedirectResponse
@@ -71,8 +80,30 @@ class UserRegistrasiController extends Controller
             return redirect()->back();
         }
 
+        function validatePeriodePendaftaran(string $attribute, mixed $value, Closure $fail, User $user): void
+        {
+            $periode_pendaftarans = PeriodePendaftaran::all();
+            $now = Carbon::now()->format('Y-m-d H:i:s');
+
+            foreach ($periode_pendaftarans as $periode_pendaftaran) {
+                if ($user->program_studi_id == $periode_pendaftaran->program_studi_id && $value == $periode_pendaftaran->jalur_pendaftaran_id && $periode_pendaftaran->mulai <= $now && $now <= $periode_pendaftaran->berakhir) {
+                    return;
+                }
+            }
+
+            $fail("Sesi pendaftaran untuk " . $user->program_studi->nama . " dan jalur " . JalurPendaftaran::find($value)->nama . " salah");
+        }
+
         if ($user->status == 'Belum registrasi') {
             $validated = $request->validate([
+                'jalur_pendaftaran_id' => [
+                    'required',
+                    'integer',
+                    'exists:jalur_pendaftarans,id',
+                    function ($attribute, $value, $fail) use ($user) {
+                        validatePeriodePendaftaran($attribute, $value, $fail, $user);
+                    }
+                ],
                 'pas_foto' => 'required|file|image|mimes:jpg,png,jpeg|max:1024',
                 'krm' => 'required|file|mimes:pdf|max:1024',
                 'nama_panggilan' => 'required|string|min:1|max:50',
@@ -101,6 +132,7 @@ class UserRegistrasiController extends Controller
                 'bukti_transaksi' => 'required|file|mimes:pdf,jpg,png,jpeg|max:1024'
             ]);
 
+            $user->jalur_pendaftaran_id = $validated['jalur_pendaftaran_id'];
             $user->nama_panggilan = $validated['nama_panggilan'];
             $user->jenis_kelamin = $validated['jenis_kelamin'];
             $user->agama = $validated['agama'];
@@ -175,6 +207,14 @@ class UserRegistrasiController extends Controller
             return redirect()->route('view-registrasi')->with(["toast" => ["type" => "success", "message" => "Berhasil mengajukan registrasi."]]);
         } else if ($user->status == 'Kesalahan data registrasi') {
             $validated = $request->validate([
+                'jalur_pendaftaran_id' => [
+                    'required',
+                    'integer',
+                    'exists:jalur_pendaftarans,id',
+                    function ($attribute, $value, $fail) use ($user) {
+                        validatePeriodePendaftaran($attribute, $value, $fail, $user);
+                    }
+                ],
                 'pas_foto' => 'nullable|file|image|mimes:jpg,png,jpeg|max:1024',
                 'krm' => 'nullable|file|mimes:pdf|max:1024',
                 'nama_panggilan' => 'required|string|min:1|max:50',
@@ -203,6 +243,7 @@ class UserRegistrasiController extends Controller
                 'bukti_transaksi' => 'nullable|file|mimes:pdf,jpg,png,jpeg|max:1024'
             ]);
 
+            $user->jalur_pendaftaran_id = $validated['jalur_pendaftaran_id'];
             $user->nama_panggilan = $validated['nama_panggilan'];
             $user->jenis_kelamin = $validated['jenis_kelamin'];
             $user->agama = $validated['agama'];

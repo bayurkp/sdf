@@ -115,8 +115,19 @@
                         <input type="text" class="form-control" value="{{$user->nama_lengkap}}" spellcheck="disabled" readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Jalur Pendaftaran</label>
-                        <input type="text" class="form-control" value="{{$user->jalur_pendaftaran->nama}}" spellcheck="disabled" readonly>
+                        <label class="form-label">Jalur Pendaftaran <span style="color:#FF0000">*</span></label>
+                        <select class="form-control @error('jalur_pendaftaran_id') is-invalid @enderror" name="jalur_pendaftaran_id">
+                            @foreach($jalur_pendaftarans as $jalur_pendaftaran)
+                            @if(old('jalur_pendaftaran_id') == $jalur_pendaftaran['id'] || (empty(old('jalur_pendaftaran_id')) && $user->jalur_pendaftaran_id == $jalur_pendaftaran['id']))
+                            <option value="{{$jalur_pendaftaran['id']}}" selected>{{$jalur_pendaftaran['nama']}}</option>
+                            @else
+                            <option value="{{$jalur_pendaftaran['id']}}">{{$jalur_pendaftaran['nama']}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                        @error('jalur_pendaftaran_id')
+                        <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Program Studi</label>
@@ -370,11 +381,19 @@
                                         <small>
                                             Setelah berhasil membayar, silakan unggah bukti transaksi dan konfirmasi ke kontak berikut:
                                             <br />
-                                            Fara: 085648315785 (Teknik Mesin & Arsitektur)
+                                            Arsitektur: Ita (087850166533)
                                             <br />
-                                            Nola: 083116104562 (Teknik Industri & Teknik Sipil)
+                                            Teknik Sipil: Laura (081252759540)
                                             <br />
-                                            Ita: 087850166533 (Teknik Elektro, Teknik Lingkungan, Teknologi Informasi)
+                                            Teknik Mesin: Cantika (081999438444)
+                                            <br />
+                                            Teknik Elektro: Nola (083116104562)
+                                            <br />
+                                            Teknik Lingkungan: Fara (085648315785)
+                                            <br />
+                                            Teknologi Informasi: Wiratama (087842170159)
+                                            <br />
+                                            Teknik Industri: Febryan (085158880221)
                                         </small>
                                     </td>
                                 </tr>
