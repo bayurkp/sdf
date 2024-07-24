@@ -75,7 +75,7 @@
                 <div class="hero-text w-full md:w-2/3 2xl:w-3/5 h-fit pr-0 md:pr-10 2xl:pr-28 text-center md:text-left">
                     <h1 class="text-white font-extrabold text-4xl sm:text-6xl uppercase">pkkmb fakultas teknik 2024</h1>
                     <p class="text-gray-200 mt-4 mb-8">
-                        Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.</p>
+                        PKKMB FT merupakan rangkaian dari kegiatan penerimaan mahasiswa baru di lingkungan Fakultas Teknik Universitas Udayana. Sebagaimana kegiatan penerimaan mahasiswa baru lainnya, PKKMB ini merupakan kegiatan yang wajib diikuti yang nantinya akan mempengaruhi penginputan SKP, syarat yudisium, dan kelulusan mahasiswa.</p>
                     <a href="{{ route('login') }}" class="px-4 py-2 bg-[#c3872e] mt-4 text-white font-semibold rounded-md uppercase">Daftar PKKMB</a>
                 </div>
                 <div class="hero-image w-full md:w-1/3 2xl:w-2/5 flex justify-center ">
@@ -115,7 +115,7 @@
                         Senat Mahasiswa Fakultas Teknik
                     </h2>
                     <p class="text-gray-600 mt-2 mb-1">
-                        Senat Mahasiswa Fakultas Teknik (SMFT) SMFT Unud berfungsi sebagai lembaga eksekutif. SMFT Unud mempunyai tugas pokok: Mengkoordinasikan dan menyelenggarakan kegiatan kemahasiswaan dalam bidang ekstrakurikuler. Memberikan pendapat, usul, saran dan memperjuangkan aspirasi mahasiswa pada pimpinan FT Unud. Melaksanakan hasil-hasil Musma FT Unud.
+                        Senat Mahasiswa Fakultas Teknik (SMFT) Universitas Udayana merupakan lembaga eksekutif di tingkat fakultas yang berada di Fakultas Teknik Universitas Udayana. SMFT Unud mempunyai tugas pokok: Mengkoordinasikan dan menyelenggarakan kegiatan kemahasiswaan dalam bidang ekstrakurikuler. Memberikan pendapat, usul, saran dan memperjuangkan aspirasi mahasiswa pada pimpinan FT Unud. Melaksanakan hasil-hasil Musma FT Unud.
                     </p>
                 </div>
                 <div class="about-image w-full md:w-1/2 flex justify-center">
@@ -285,20 +285,9 @@
                         <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
                             <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
                             <div class="p-4 2xl:p-6 text-center space-y-2">
-                                <h4 class="text-gray-800 text-xl font-semibold">PKKMB FT</h4>
-                                <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide w-11/12 sm:w-96">
-                        <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
-                            <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
-                            <div class="p-4 2xl:p-6 text-center space-y-2">
                                 <h4 class="text-gray-800 text-xl font-semibold">GrAnaT</h4>
                                 <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
+                                    GrAnaT merupakan kegiatan tahunan dari Senat Mahasiswa Fakultas Teknik Universitas Udayana. GrAnaT adalah salah satu konser musik Underground terbesar di Bali yang menampilkan band-band lokal beraliran musik Underground
                                 </p>
                             </div>
                         </div>
@@ -309,7 +298,7 @@
                             <div class="p-4 2xl:p-6 text-center space-y-2">
                                 <h4 class="text-gray-800 text-xl font-semibold">TBTN</h4>
                                 <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
+                                    Teknik Back to Nature merupakan kegiatan untuk menumbuh kembangkan kecintaan dan kepedulian mahasiswa terhadap alam lingkungan sekaligus untuk memupuk rasa kekeluargaan antar civitas akademika Fakultas Teknik. Aktivitas yang dilaksanakan dalam TBTN ini berupa kegiatan pengabdian kepada masyarakat
                                 </p>
                             </div>
                         </div>
@@ -320,7 +309,7 @@
                             <div class="p-4 2xl:p-6 text-center space-y-2">
                                 <h4 class="text-gray-800 text-xl font-semibold">TFT</h4>
                                 <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
+                                    Tekno Futsal Tournament adalah lomba futsal di Bali diselenggarakan oleh Senat Mahasiswa Fakultas Teknik Universitas Udayana dengan 3 kategori yakni SMA, Mahasiswa, dan Umum
                                 </p>
                             </div>
                         </div>
@@ -329,20 +318,9 @@
                         <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
                             <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
                             <div class="p-4 2xl:p-6 text-center space-y-2">
-                                <h4 class="text-gray-800 text-xl font-semibold">Portek</h4>
+                                <h4 class="text-gray-800 text-xl font-semibold">PORTEK</h4>
                                 <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide w-11/12 sm:w-96">
-                        <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
-                            <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
-                            <div class="p-4 2xl:p-6 text-center space-y-2">
-                                <h4 class="text-gray-800 text-xl font-semibold">Dies Natalis</h4>
-                                <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
+                                    Pekan Olahraga Teknik (PORTEK) adalah kegiatan di bidang olahraga yang diselenggarakan setiap tahun oleh Senat Mahasiswa Fakultas Teknik (SMFT). Portek memiliki tujuan selain sebgai wadah untuk mengembangkan wawasan, juga menyalurkan minat dan bakat mahasiswa di bidang olahraga.
                                 </p>
                             </div>
                         </div>
@@ -353,7 +331,7 @@
                             <div class="p-4 2xl:p-6 text-center space-y-2">
                                 <h4 class="text-gray-800 text-xl font-semibold">BKFT</h4>
                                 <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
+                                    BKFT adalah kegiatan fakultas yang melibatkan seluruh civitas akademika dan alumni Fakultas Teknik yang diselenggarakan secara rutin tiap tahunnya dalam rangka menyambut ulang tahun Fakultas Teknik Universitas Udayana
                                 </p>
                             </div>
                         </div>
@@ -362,9 +340,9 @@
                         <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
                             <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
                             <div class="p-4 2xl:p-6 text-center space-y-2">
-                                <h4 class="text-gray-800 text-xl font-semibold">MUSMA</h4>
+                                <h4 class="text-gray-800 text-xl font-semibold">PKM</h4>
                                 <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
+                                    PKM merupakan salah satu upaya untuk meningkatkan kualitas peserta didik (mahasiswa) di perguruan tinggi agar kelak dapat menjadi anggota masyarakat yang dapat menerapkan, mengembangkan dan menyebarluarkan ilmu pengetahuan, teknologi dan/atau kesenian serta memperkaya budaya nasional
                                 </p>
                             </div>
                         </div>
@@ -373,9 +351,53 @@
                         <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
                             <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
                             <div class="p-4 2xl:p-6 text-center space-y-2">
-                                <h4 class="text-gray-800 text-xl font-semibold">PEMIRA</h4>
+                                <h4 class="text-gray-800 text-xl font-semibold">PKKMB TEKNIK</h4>
                                 <p class="text-gray-600 text-center">
-                                    Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.
+                                    PKKMB TEKNIK merupakan rangkaian penerimaan mahasiswa baru yang berisikan kegiatan pengenalan kehidupaan mahasiswa di kampus, berbagai kegiatan kemahasiswaan yang bersifat ko-kurikuler dan ekstrakurikuler yang bermuara pada pengembangan dan peningkatan soft-skills
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide w-11/12 sm:w-96">
+                        <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
+                            <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
+                            <div class="p-4 2xl:p-6 text-center space-y-2">
+                                <h4 class="text-gray-800 text-xl font-semibold">SEMINAR TEKNIK</h4>
+                                <p class="text-gray-600 text-center">
+                                    Seminar Teknik merupakan kegiatan yang ditujukan pada mahasiswa baru Fakultas Teknik Universitas Udayana yang setiap tahunnya mengambil tema yang berbeda. Latar belakang diadakannya kegiatan ini adalah mengingat pentingnya diadakan sebuah kegiatan kemahasiswaan dan juga seminar yang dapat melatih kecakapan berorganisasi atau soft-skills
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide w-11/12 sm:w-96">
+                        <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
+                            <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
+                            <div class="p-4 2xl:p-6 text-center space-y-2">
+                                <h4 class="text-gray-800 text-xl font-semibold">DIES NATALIS</h4>
+                                <p class="text-gray-600 text-center">
+                                    Dies Natalis merupakan kegiatan yang ditujuakan untuk memperingati hari jadi Universitas Udayana. Tujuannya adalah untuk mempererat ikatan seluruh civitas akademika Universitas Udayana. Acara ini dibagi menjadi dua kegiatan yaitu Pekan Olahraga dan Seni
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide w-11/12 sm:w-96">
+                        <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
+                            <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
+                            <div class="p-4 2xl:p-6 text-center space-y-2">
+                                <h4 class="text-gray-800 text-xl font-semibold">PILMAPRES</h4>
+                                <p class="text-gray-600 text-center">
+                                    PILMAPRES merupakan kegiatan untuk mencari mahasiswa berprestasi yang ada di Fakultas Teknik
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide w-11/12 sm:w-96">
+                        <div class="bg-white overflow-hidden flex flex-col items-center border border-gray-300 rounded-md hover:shadow-lg transition-all duration-500">
+                            <img src="{{ url('img/tekno-futsal.jpg') }}" class="" alt="">
+                            <div class="p-4 2xl:p-6 text-center space-y-2">
+                                <h4 class="text-gray-800 text-xl font-semibold">PPK ORMAWA</h4>
+                                <p class="text-gray-600 text-center">
+                                    Program Penguatan Kapasitas Organisasi Kemahasiswaan (PPK Ormawa) merupakan salah satu program kompetisi yang diselenggarakan oleh Belmawa Kemdikbud. Program ini merupakan program dalam skala organisasi kemahasiswaan yang tergolong dalam bidang masyarakat. Program ini menitikberatkan mengenai perluasan dan penguatan kapasitas organisasi Mahasiswa hingga ke masyarakat.
                                 </p>
                             </div>
                         </div>
