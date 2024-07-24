@@ -39,10 +39,10 @@ Route::middleware(['throttle:60,1'])->group(function () {
     //Guest
     Route::middleware([Guest::class])->group(function () {
         Route::get('/', [GuestController::class, 'index'])->name('index'); // Landing Page
-        
+
         Route::get('/login', [GuestController::class, 'viewLogin'])->name('view-login');
         Route::post('/login', [GuestController::class, 'login'])->name('login');
-        
+
         Route::get('/admin-login', [AdminAuthController::class, 'viewLogin'])->name('admin-view-login');
         Route::post('/admin-login', [AdminAuthController::class, 'login'])->name('admin-login');
     });
@@ -52,19 +52,20 @@ Route::middleware(['throttle:60,1'])->group(function () {
         Route::get('/coming-soon', [UserAuthController::class, 'comingSoon'])->name('view-coming-soon');
 
         Route::get('/logout', [UserAuthController::class, 'logout'])->name('logout');
-        
+
         Route::get('/ganti-password', [UserAuthController::class, 'viewGantiPassword'])->name('view-ganti-password');
         Route::post('/ganti-password', [UserAuthController::class, 'gantiPassword'])->name('ganti-password');
     });
 
     //Mahasiswa Sudah Ganti Password
     Route::middleware([MahasiswaSudahGantiPassword::class])->group(function () {
-        
+
         Route::get('/pengumuman', [UserPengumumanController::class, 'viewPengumuman'])->name('view-pengumuman');
-        
+
         Route::get('/registrasi', [UserRegistrasiController::class, 'viewRegistrasi'])->name('view-registrasi');
         Route::post('/registrasi', [UserRegistrasiController::class, 'registrasi'])->name('registrasi');
         Route::get('/download-krm', [UserRegistrasiController::class, 'downloadKrm'])->name('download-krm');
+        Route::get('/download-bukti-transaksi', [UserRegistrasiController::class, 'downloadBuktiTransaksi'])->name('download-bukti-transaksi');
 
         Route::get('/organisasi', [UserOrganisasiController::class, 'index'])->name('view-organisasi');
         Route::get('/organisasi/{id}', [UserOrganisasiController::class, 'read'])->name('read-organisasi');
@@ -85,7 +86,7 @@ Route::middleware(['throttle:60,1'])->group(function () {
     });
 
     Route::middleware([MahasiswaTeregistrasi::class])->group(function () {
-        Route::get('/qrcode', [UserQrcodeController::class, 'index'])->name('view-qrcode');
+        Route::get('/group-chat', [UserQrcodeController::class, 'index'])->name('view-group-chat');
         Route::get('/link-qrcode', [UserQrcodeController::class, 'link'])->name('link-qrcode');
 
         Route::get('/berkas', [UserBerkasController::class, 'index'])->name('view-berkas');
@@ -97,9 +98,9 @@ Route::middleware(['throttle:60,1'])->group(function () {
     //Admin
     Route::middleware([Admin::class])->group(function () {
         Route::get('/admin/coming-soon', [AdminAuthController::class, 'comingSoon'])->name('admin-view-coming-soon');
-        
+
         Route::get('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin-logout');
-        
+
         Route::get('/admin/dashboard', [AdminAuthController::class, 'dashboard'])->name('admin-view-dashboard');
 
         Route::get('/admin/jalur-pendaftaran', [AdminJalurPendaftaranController::class, 'index'])->name('admin-view-jalur-pendaftaran');
@@ -161,6 +162,7 @@ Route::middleware(['throttle:60,1'])->group(function () {
 
         Route::get('/admin/registrasi', [AdminRegistrasiController::class, 'index'])->name('admin-view-registrasi');
         Route::get('/admin/download-krm/{id}', [AdminRegistrasiController::class, 'downloadKrm'])->name('admin-download-krm-registrasi');
+        Route::get('/admin/download-bukti-transaksi/{id}', [AdminRegistrasiController::class, 'downloadBuktiTransaksi'])->name('admin-download-bukti-transaksi-registrasi');
         Route::get('/admin/download-prestasi/{id}', [AdminRegistrasiController::class, 'downloadPrestasi'])->name('admin-download-prestasi-registrasi');
         Route::post('/admin/note-registrasi/{id}', [AdminRegistrasiController::class, 'note'])->name('admin-note-registrasi');
         Route::get('/admin/konfirmasi-registrasi/{id}', [AdminRegistrasiController::class, 'konfirmasi'])->name('admin-konfirmasi-registrasi');

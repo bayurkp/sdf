@@ -47,10 +47,37 @@
                     <i class="fa fa-check text-success"></i> Registrasi PKKMB FT {{date('Y')}} Berhasil.
                 </div>
                 @endif
+
+                @if($user->status != 'Teregistrasi')
+                <div class="alert alert-info mb-0 mt-3" role="alert" style="width:100%;">
+                    <i class="fa fa-info-circle text-info"></i> Lakukan <i>refresh</i> secara berkala untuk mengecek status terbaru.
+                </div>
+                @endif
             </div>
         </div>
     </div>
 </div>
+
+@if ($errors->any())
+<div class="row">
+    <div class="col">
+        <div class="white_shd full margin_bottom_30 padding_40">
+            <div class="padding_infor_info">
+                <div class="alert alert-danger mb-0" role="alert" style="width:100%;">
+                    <div class="mb-2">
+                        <i class="fa fa-exclamation-circle text-danger"></i> Terdapat kesalahan pada formulir yang diajukan, yaitu:
+                    </div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>• {{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 
 @if($user->status == 'Belum registrasi' || $user->status == 'Kesalahan data registrasi')
 <div class="row">
@@ -70,14 +97,14 @@
                         <div class="w-100 mt-2 ml-2">
                             @if($user->status == 'Belum registrasi')
                             <label class="form-label">Pas Foto <span style="color:#FF0000">*</span></label>
-                            <input class="form-control @error('pas_foto') is-invalid @enderror" type="file" name="pas_foto" required onchange="readURL(this);">
+                            <input class="form-control @error('pas_foto') is-invalid @enderror" type="file" name="pas_foto" required onchange="readURL(this);" accept="image/png, image/jpeg, image/jpg">
                             @else
                             <label class="form-label">Pas Foto</label>
-                            <input class="form-control @error('pas_foto') is-invalid @enderror" type="file" name="pas_foto" onchange="readURL(this);">
+                            <input class="form-control @error('pas_foto') is-invalid @enderror" type="file" name="pas_foto" onchange="readURL(this);" accept="image/png, image/jpeg, image/jpg">
                             @endif
                             <small>*Upload Pas Foto dengan Ketentuan Bebas Rapi</small>
                             <br>
-                            <small>*Ukuran File Maksimal 2 MB</small>
+                            <small>*Ukuran File Maksimal 1 MB</small>
                             <br>
                             <small>*Format File: JPG, PNG, JPEG</small>
                             @error('pas_foto')
@@ -94,8 +121,19 @@
                         <input type="text" class="form-control" value="{{$user->nama_lengkap}}" spellcheck="disabled" readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Jalur Pendaftaran</label>
-                        <input type="text" class="form-control" value="{{$user->jalur_pendaftaran->nama}}" spellcheck="disabled" readonly>
+                        <label class="form-label">Jalur Pendaftaran <span style="color:#FF0000">*</span></label>
+                        <select class="form-control @error('jalur_pendaftaran_id') is-invalid @enderror" name="jalur_pendaftaran_id">
+                            @foreach($jalur_pendaftarans as $jalur_pendaftaran)
+                            @if(old('jalur_pendaftaran_id') == $jalur_pendaftaran['id'] || (empty(old('jalur_pendaftaran_id')) && $user->jalur_pendaftaran_id == $jalur_pendaftaran['id']))
+                            <option value="{{$jalur_pendaftaran['id']}}" selected>{{$jalur_pendaftaran['nama']}}</option>
+                            @else
+                            <option value="{{$jalur_pendaftaran['id']}}">{{$jalur_pendaftaran['nama']}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                        @error('jalur_pendaftaran_id')
+                        <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Program Studi</label>
@@ -114,13 +152,13 @@
                         <div class="d-flex">
                             <div class="w-100">
                                 @if($user->status == 'Belum registrasi')
-                                <input class="form-control @error('krm') is-invalid @enderror" type="file" name="krm" required>
+                                <input class="form-control @error('krm') is-invalid @enderror" type="file" name="krm" required accept="application/pdf">
                                 @else
-                                <input class="form-control @error('krm') is-invalid @enderror" type="file" name="krm">
+                                <input class="form-control @error('krm') is-invalid @enderror" type="file" name="krm" accept="application/pdf">
                                 @endif
                                 <small>*Format file: PDF</small>
                                 <br>
-                                <small>*Ukuran File Maksimal 2 MB</small>
+                                <small>*Ukuran File Maksimal 1 MB</small>
                                 @error('nama_panggilan')
                                 <div class="invalid-feedback">{{$message}}</div>
                                 @enderror
@@ -308,6 +346,88 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Paket PKKMB Kit <span style="color:#FF0000">*</span></label>
+                        <select class="form-control" name="paket_pkkmb_kit">
+                            @foreach($paket_pkkmb_kits as $paket_pkkmb_kit)
+                            @php
+                            $deskripsi_paket = $paket_pkkmb_kit['paket'] . ' - Rp' . number_format($paket_pkkmb_kit['harga'], 0, ',', '.') . ',00 - ' . $paket_pkkmb_kit['deskripsi'];
+                            @endphp
+                            @if(old('paket_pkkmb_kit') == $paket_pkkmb_kit['paket'] || (empty(old('paket_pkkmb_kit')) && $user->paket_pkkmb_kit == $paket_pkkmb_kit['paket']))
+                            <option value="{{$paket_pkkmb_kit['paket']}}" selected>{{$deskripsi_paket}}</option>
+                            @else
+                            <option value="{{$paket_pkkmb_kit['paket']}}">{{$deskripsi_paket}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        @if($user->status == 'Belum registrasi')
+                        <label class="form-label">Bukti Transaksi<span style="color:#FF0000"> *</span></label>
+                        @else
+                        <label class="form-label">Bukti Transaksi</label>
+                        @endif
+                        <div class="mb-2">
+                            <table>
+                                <tr>
+                                    <td style="padding-right: 10px; vertical-align: top;">
+                                        *
+                                    </td>
+                                    <td>
+                                        <small>
+                                            Mohon untuk melakukan pembayaran sesuai dengan nominal ke nomor rekening berikut:
+                                            <br />
+                                            BNI 1448933532 a/n Ni Putu Intan Sri Diana
+                                        </small>
+                                    </td>
+                                <tr>
+                                    <td style="padding-right: 10px; vertical-align: top;">
+                                        *
+                                    </td>
+                                    <td>
+                                        <small>
+                                            Setelah berhasil membayar, silakan unggah bukti transaksi dan konfirmasi ke kontak berikut:
+                                            <br />
+                                            Arsitektur: Ita (087850166533)
+                                            <br />
+                                            Teknik Sipil: Laura (081252759540)
+                                            <br />
+                                            Teknik Mesin: Cantika (081999438444)
+                                            <br />
+                                            Teknik Elektro: Nola (083116104562)
+                                            <br />
+                                            Teknik Lingkungan: Fara (085648315785)
+                                            <br />
+                                            Teknologi Informasi: Wiratama (087842170159)
+                                            <br />
+                                            Teknik Industri: Febryan (085158880221)
+                                        </small>
+                                    </td>
+                                </tr>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="d-flex">
+                            <div class="w-100">
+                                @if($user->status == 'Belum registrasi')
+                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" required accept="application/pdf">
+                                @else
+                                <input class="form-control @error('bukti_transaksi') is-invalid @enderror" type="file" name="bukti_transaksi" accept="application/pdf, image/png, image/jpeg, image/jpg">
+                                @endif
+                                <small>*Format file: PDF, JPG, PNG, JPEG</small>
+                                <br>
+                                <small>*Ukuran File Maksimal 1 MB</small>
+                                @error('bukti_transaksi')
+                                <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
+                            </div>
+                            @if(!empty($user->bukti_transaksi))
+                            <div class="ml-2">
+                                <a href="{{route('download-bukti-transaksi')}}" class="btn btn-success py-2" style="margin-top: 1px;"><i class="fa fa-download"></i></a>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <div class="form-check">
                             @if($user->organisasi == 'Ya')
                             <input class="form-check-input" type="checkbox" value="1" name="organisasi" checked>
@@ -409,7 +529,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Kartu Registrasi Mahasiswa (KRM) / Bukti Registrasi Online</label>
-                    <a href="{{route('download-krm')}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"> Download KRM / Bukti Registrasi Online</i></a>
+                    <a href="{{route('download-krm')}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"></i> Download KRM / Bukti Registrasi Online</a>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Nama Panggilan</label>
@@ -498,6 +618,14 @@
                 <div class="mb-3">
                     <label class="form-label">Penyakit Khusus</label>
                     <textarea class="form-control" rows="3" readonly disabled>{{$user->penyakit_khusus}}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Paket PKKMB Kit</label>
+                    <input type="text" class="form-control" value="{{$user->paket_pkkmb_kit}}" readonly disabled>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Bukti Transaksi</label>
+                    <a href="{{route('download-bukti-transaksi')}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"></i> Download Bukti Transaksi</a>
                 </div>
                 <div class="mb-3">
                     <div class="form-check">

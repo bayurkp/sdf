@@ -14,65 +14,61 @@
     <div class="col">
         <div class="white_shd full margin_bottom_30 padding_40">
             <div class="padding_infor_info">
-                <div class="d-flex">
-                    <div class="w-100">
-                        <div class="input-group">
-                            <span class="input-group-text" style="border-top-right-radius:0px; border-bottom-right-radius:0px;"><i class="fa fa-search text-secondary"></i></span>
-                            <input class="form-control" type="text" id="search" placeholder="Cari" onkeyup="searchFunction()" />
-                        </div>
+                <div class="d-flex flex-wrap align-items-center" style="gap: 10px;">
+                    <div class="input-group w-100" style="max-width: 200px;">
+                        <span class="input-group-text" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;"><i class="fa fa-search text-secondary"></i></span>
+                        <input class="form-control" type="text" id="search" placeholder="Cari" onkeyup="searchFunction()" />
                     </div>
-                    <div class="ml-4">
-                        <select class="form-control" id="showRow" onchange="searchFunction()" style="width:150px;">
-                            <option selected value="20">Filter Baris</option>
-                            <option value="50">Show 50 Data</option>
-                            <option value="100">Show 100 Data</option>
-                            <option value="0">Show All</option>
+                    <div>
+                        <select class="form-control" id="showRow" onchange="searchFunction()" style="width: 200px;">
+                            <option selected value="20">Tampilkan</option>
+                            <option value="50">50 Baris</option>
+                            <option value="100">100 Baris</option>
+                            <option value="0">100 Baris</option>
                         </select>
                     </div>
-                    <div class="ml-4">
-                        <select class="form-control" id="showProgramStudi" style="width:200px;" onchange="filterFunction()">
+                    <div>
+                        <select class="form-control" id="order_by" onchange="filterFunction()" style="width: 200px;">
+                            <option selected value="nim">Urut Berdasarkan</option>
+                            <option value="nim">NIM</option>
+                            <option value="updated_at">Waktu Perubahan</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select class="form-control" id="showProgramStudi" style="width: 200px;" onchange="filterFunction()">
                             <option value="0" selected>Semua Program Studi</option>
                             @foreach($program_studis as $program_studi)
-                            @if($program_studi->id == $filter_program_studi)
-                            <option value="{{$program_studi->id}}" selected>{{$program_studi->nama}}</option>
-                            @else
-                            <option value="{{$program_studi->id}}">{{$program_studi->nama}}</option>
-                            @endif
+                            <option value="{{$program_studi->id}}" {{ $program_studi->id == $filter_program_studi ? 'selected' : '' }}>{{$program_studi->nama}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="ml-4">
-                        <select class="form-control" id="showJalurPendaftaran" style="width:225px;" onchange="filterFunction()">
-                            <option value="0" selected>Semua Jalur Pendaftaran</option>
+                    <div>
+                        <select class="form-control" id="showJalurPendaftaran" style="width: 200px;" onchange="filterFunction()">
+                            <option value="0" selected>Semua Jalur</option>
                             @foreach($jalur_pendaftarans as $jalur_pendaftaran)
-                            @if($jalur_pendaftaran->id == $filter_jalur_pendaftaran)
-                            <option value="{{$jalur_pendaftaran->id}}" selected>{{$jalur_pendaftaran->nama}}</option>
-                            @else
-                            <option value="{{$jalur_pendaftaran->id}}">{{$jalur_pendaftaran->nama}}</option>
-                            @endif
+                            <option value="{{$jalur_pendaftaran->id}}" {{ $jalur_pendaftaran->id == $filter_jalur_pendaftaran ? 'selected' : '' }}>{{$jalur_pendaftaran->nama}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="ml-4">
-                        <select class="form-control" id="showStatus" style="width:250px;" onchange="filterFunction()">
+                    <div>
+                        <select class="form-control" id="showStatus" style="width: 200px;" onchange="filterFunction()">
                             <option value="0" selected>Semua Status</option>
                             @foreach($statuses as $status)
-                            @if($status == $filter_status)
-                            <option value="{{$status}}" selected>{{$status}}</option>
-                            @else
-                            <option value="{{$status}}">{{$status}}</option>
-                            @endif
+                            <option value="{{$status}}" {{ $status == $filter_status ? 'selected' : '' }}>{{$status}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="ml-4">
-                        <a href="{{route('admin-view-registrasi').'?program_studi='.$filter_program_studi.'&jalur_pendaftaran='.$filter_jalur_pendaftaran.'&status='.$filter_status}}"><button type="button" class="btn btn-outline-secondary m-0" id="btn-refresh" style="float:right;"><i class="fa fa-refresh text-secondary"></i></button></a>
+                    <div>
+                        <a href="{{route('admin-view-registrasi').'?program_studi='.$filter_program_studi.'&jalur_pendaftaran='.$filter_jalur_pendaftaran.'&status='.$filter_status}}">
+                            <button type="button" class="btn btn-outline-secondary" id="btn-refresh"><i class="fa fa-refresh text-secondary"></i></button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col">
         <div class="white_shd full margin_bottom_30">
@@ -178,7 +174,7 @@
                     @if(!empty($mahasiswa->krm))
                     <div class="mb-3">
                         <label class="form-label">Kartu Registrasi Mahasiswa (KRM) / Bukti Registrasi Online</label>
-                        <a href="{{route('admin-download-krm-registrasi', ['id' => $mahasiswa->id])}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"> Download KRM / Bukti Registrasi Online</i></a>
+                        <a href="{{route('admin-download-krm-registrasi', ['id' => $mahasiswa->id])}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"></i> Download KRM / Bukti Registrasi Online</a>
                     </div>
                     @endif
                     <div class="mb-3">
@@ -275,6 +271,16 @@
                         <label class="form-label">Penyakit Khusus</label>
                         <textarea class="form-control" rows="3" readonly disabled>{{$mahasiswa->penyakit_khusus}}</textarea>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Paket PKKMB Kit</label>
+                        <input type="text" class="form-control" value="{{$mahasiswa->paket_pkkmb_kit}}" readonly disabled>
+                    </div>
+                    @if(!empty($mahasiswa->bukti_transaksi))
+                    <div class="mb-3">
+                        <label class="form-label">Bukti Transaksi</label>
+                        <a href="{{route('admin-download-bukti-transaksi-registrasi', ['id' => $mahasiswa->id])}}" target="_blank" class="btn btn-success py-2" style="margin-top: 1px; width:100%;"><i class="fa fa-download"></i> Download Bukti Transaksi</a>
+                    </div>
+                    @endif
                     <div class="mb-3">
                         <label class="form-label">Pengalaman Organisasi</label>
                         @if($mahasiswa->organisasi == 'Ya')
@@ -461,7 +467,7 @@
                 <div class="modal-body" style="max-height: calc(100vh - 210px); overflow-y: auto;">
                     <div class="">
                         @if($mahasiswa->status == "Teregistrasi")
-                        <a href="{{route('admin-download-biodata-registrasi', ['id' => $mahasiswa->id])}}" type="button" class="btn btn-success" target="_blank" style="width:100%;"><i class="fa fa-download"> Download Form Verifikasi Mahasiswa</i></a>
+                        <a href="{{route('admin-download-biodata-registrasi', ['id' => $mahasiswa->id])}}" type="button" class="btn btn-success" target="_blank" style="width:100%;"><i class="fa fa-download"></i> Download Form Verifikasi Mahasiswa</a>
                         @else
                         <input type="text" class="form-control" value="{{'Mahasiswa belum Teregistrasi PKKMB FT '.date('Y')}}" spellcheck="disabled" readonly>
                         @endif
@@ -474,11 +480,32 @@
 </div>
 
 <script>
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        let results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    window.onload = function() {
+        let order_by = getUrlParameter('order_by');
+        if (order_by) {
+            let select = document.getElementById('order_by');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === order_by) {
+                    select.options[i].selected = true;
+                    break;
+                }
+            }
+        }
+    }
+
     function filterFunction() {
+        let order_by = document.getElementById('order_by').value;
         let program_studi = document.getElementById('showProgramStudi').value;
         let jalur_pendaftaran = document.getElementById('showJalurPendaftaran').value;
         let status = document.getElementById('showStatus').value;
-        let url = "{{route('admin-view-registrasi')}}" + "?program_studi=" + program_studi + "&jalur_pendaftaran=" + jalur_pendaftaran + "&status=" + status;
+        let url = "{{route('admin-view-registrasi')}}" + "?program_studi=" + program_studi + "&jalur_pendaftaran=" + jalur_pendaftaran + "&status=" + status + "&order_by=" + order_by;
         window.location.href = url;
     }
 
