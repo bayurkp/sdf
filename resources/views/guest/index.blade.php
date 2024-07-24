@@ -71,15 +71,15 @@
     <main>
         {{-- section home --}}
         <section id="home">
-            <div class="hero min-h-screen flex flex-col-reverse md:flex-row items-center justify-center py-20 px-6 md:px-10 bg-hero-pattern bg-cover bg-no-repeat bg-center">
-                <div class="hero-text w-full md:w-2/3 h-fit pr-0 md:pr-10 text-center md:text-left">
+            <div class="hero min-h-screen flex flex-col-reverse md:flex-row items-center justify-center 2xl:justify-start py-20 px-6 md:px-10 bg-hero-pattern bg-cover bg-no-repeat bg-center">
+                <div class="hero-text w-full md:w-2/3 2xl:w-3/5 h-fit pr-0 md:pr-10 2xl:pr-28 text-center md:text-left">
                     <h1 class="text-white font-extrabold text-4xl sm:text-6xl uppercase">pkkmb fakultas teknik 2024</h1>
                     <p class="text-gray-200 mt-4 mb-8">
                         Kegiatan PKKMB FT merupakan suatu kegiatan yang menjadi rangkaian kegiatan penerimaan mahasiswa baru Fakultas Teknik. Pada kegiatan ini, mahasiswa baru diperkenalkan dengan kegiatan-kegiatan kemahasiswaan beserta organisasi di lingkungan Senat Mahasiswa Fakultas Teknik Universitas Udayana.</p>
                     <a href="{{ route('login') }}" class="px-4 py-2 bg-[#c3872e] mt-4 text-white font-semibold rounded-md uppercase">Daftar PKKMB</a>
                 </div>
-                <div class="hero-image w-full md:w-1/3 flex justify-center ">
-                    <img src="{{ url('img/logo-pkkmb-ft-2024.png') }}" class="w-3/4 md:w-full" alt="">
+                <div class="hero-image w-full md:w-1/3 2xl:w-2/5 flex justify-center ">
+                    <img src="{{ url('img/logo-pkkmb-ft-2024.png') }}" class="w-3/4 md:w-full 2xl:w-10/12" alt="">
                 </div>
             </div>
         </section>
@@ -392,7 +392,7 @@
 
         {{-- informasi terkait ppkmb --}}
         <section id="informasi-terkait" class="w-full h-fit py-20 px-6 md:px-10 bg-hero-pattern bg-cover bg-no-repeat">
-            <div class="flex flex-col justify-center">
+            <div class="flex flex-col justify-center w-4/5 2xl:w-3/5">
                 <p class="w-fit relative text-[#c3872e] font-bold text-xl capitalize mb-2 pb-1 after:absolute after:w-full after:h-[1px] after:rounded-full after:bottom-0 after:left-0 after:bg-[#c3872e] uppercase">informasi terkait</p>
                 <h2 class="text-gray-100 font-bold text-4xl py-6">Akses Informasi Lainnya Terkait PKKMB Fakultas Teknik Universitas Udayana</h2>
                 <p class="text-gray-300 mt-2 mb-1">
