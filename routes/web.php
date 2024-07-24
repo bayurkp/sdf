@@ -148,7 +148,7 @@ Route::middleware(['throttle:60,1'])->group(function () {
         Route::post('/admin/create-pengumuman', [AdminPengumumanController::class, 'create'])->name('admin-create-pengumuman');
         Route::get('/admin/edit-pengumuman/{id}', [AdminPengumumanController::class, 'viewEdit'])->name('admin-view-edit-pengumuman');
         Route::post('/admin/edit-pengumuman/{id}', [AdminPengumumanController::class, 'edit'])->name('admin-edit-pengumuman');
-        Route::get('/admin/delete-pengumuman-gambar/{id}', [AdminPengumumanController::class, 'deleteGambar'])->name('admin-delete-pengumuman-gambar');
+        Route::get('/admin/delete-file-pengumuman/{id}', [AdminPengumumanController::class, 'deleteGambar'])->name('admin-delete-file-pengumuman');
         Route::post('/admin/delete-pengumuman/{id}', [AdminPengumumanController::class, 'delete'])->name('admin-delete-pengumuman');
 
         Route::get('/admin/berkas', [AdminBerkasController::class, 'index'])->name('admin-view-berkas');

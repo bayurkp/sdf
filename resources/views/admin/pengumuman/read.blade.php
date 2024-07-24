@@ -4,7 +4,7 @@
 <div class="row column_title">
     <div class="col-md-12">
         <div class="page_title">
-        <div class="row">
+            <div class="row">
                 <div class="col" style="position: absolute; top: 50%; transform: translateY(-50%);">
                     <h2>Pengumuman</h2>
                 </div>
@@ -28,10 +28,10 @@
                     <textarea class="form-control" rows="5" disabled readonly>{{$pengumuman->deskripsi}}</textarea>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Gambar</label>
+                    <label class="form-label">File Pengumuman</label>
                     <div>
-                        @if(!empty($pengumuman->file_gambar))
-                        <img class="img-responsive" src="{{url('img/pengumuman/'.$pengumuman->file_gambar)}}" style="max-height:1000px; max-width:400px;">
+                        @if(!empty($pengumuman->file_pengumuman))
+                        <iframe class="img-responsive" src="{{url('pengumuman-pkkmb/'.$pengumuman->file_pengumuman)}}" width="100%" height="500" frameborder="0"></iframe>
                         @endif
                     </div>
                 </div>

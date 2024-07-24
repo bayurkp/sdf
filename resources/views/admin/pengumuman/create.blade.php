@@ -53,8 +53,8 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Gambar</label>
-                        <input class="form-control @error('file_gambar') is-invalid @enderror" type="file" name="file_gambar">
-                        @error('file_gambar')
+                        <input class="form-control @error('file_pengumuman') is-invalid @enderror" type="file" name="file_pengumuman">
+                        @error('file_pengumuman')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                         <small>*Format File: JPG, PNG, JPEG</small>

@@ -51,24 +51,24 @@
                         <br>
                         <small>*Hanya Satu Pengumuman saja yang akan Muncul secara Otomatis tanpa Diklik oleh Peserta PKKMB FT</small>
                     </div>
-                    <label class="form-label">Gambar</label>
+                    <label class="form-label">File Pengumuman</label>
                     <div class="mb-3 row">
                         <div class="col-10">
-                            <input class="form-control @error('file_gambar') is-invalid @enderror" type="file" name="file_gambar">
-                            @error('file_gambar')
+                            <input class="form-control @error('file_pengumuman') is-invalid @enderror" type="file" name="file_pengumuman">
+                            @error('file_pengumuman')
                             <div class="invalid-feedback">{{$message}}</div>
                             @enderror
-                            <small>*Format File: JPG, PNG, JPEG</small>
+                            <small>*Format File: JPG, PNG, JPEG, PDF</small>
                             <br>
                             <small>*Ukuran Maksimal File: 10 MB</small>
                         </div>
                         <div class="col-2">
-                            <a href="{{route('admin-delete-pengumuman-gambar', ['id' => $pengumuman->id])}}"><button type="button" class="btn cur-p btn-lg btn-outline-danger" style="float: right;">Hapus Gambar</button></a>
+                            <a href="{{route('admin-delete-file-pengumuman', ['id' => $pengumuman->id])}}"><button type="button" class="btn cur-p btn-lg btn-outline-danger" style="float: right; width: 100%">Hapus File</button></a>
                         </div>
                     </div>
                     <div class="mb-3">
-                        @if(!empty($pengumuman->file_gambar))
-                        <img class="img-responsive" src="{{url('img/pengumuman/'.$pengumuman->file_gambar)}}" style="max-height:1000px; max-width:400px;">
+                        @if(!empty($pengumuman->file_pengumuman))
+                        <iframe class="img-responsive" src="{{url('pengumuman-pkkmb/'.$pengumuman->file_pengumuman)}}" width="100%" height="500" frameborder="0"></iframe>
                         @endif
                     </div>
                     <button style="width:100%;" type="submit" class="model_bt btn btn-primary mt-4">Submit</button>

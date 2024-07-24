@@ -61,21 +61,21 @@
                                 <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Pengumuman</h3>
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Pengumuman</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="text-center">
-                                                <h1 class="modal-title fs-5">{{$pengumuman->judul}}</h1>
+                                            <div class="text-center mt-4 px-4">
+                                                <h4 class="modal-title fs-5">{{$pengumuman->judul}}</h4>
                                             </div>
-                                            @if(!empty($pengumuman->file_gambar))
-                                            <div class="text-center mt-4">
-                                                <img src="{{url('/img/pengumuman/', $pengumuman->file_gambar)}}" style="min-width:100%;">
+                                            @if(!empty($pengumuman->deskripsi))
+                                            <div class="mt-4 px-4">
+                                                {{$pengumuman->deskripsi}}
                                             </div>
                                             @endif
-                                            @if(!empty($pengumuman->deskripsi))
-                                            <div class="mt-4">
-                                                {{$pengumuman->deskripsi}}
+                                            @if(!empty($pengumuman->file_pengumuman))
+                                            <div class="text-center mt-4 px-4">
+                                                <iframe class="img-responsive" src="{{url('pengumuman-pkkmb/'.$pengumuman->file_pengumuman)}}" width="100%" height="500" frameborder="0"></iframe>
                                             </div>
                                             @endif
                                         </div>
