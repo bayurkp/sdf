@@ -19,8 +19,8 @@ class PeriodePendaftaranSeeder extends Seeder
             \App\Models\PeriodePendaftaran::create([
                 'jalur_pendaftaran_id' => 1,
                 'program_studi_id' => $program_studi->id,
-                'mulai' => '2024-07-24',
-                'berakhir' => '2024-07-26',
+                'mulai' => '2024-07-25 09:00:00',
+                'berakhir' => '2024-07-26 15:00:00',
             ]);
         }
 
@@ -29,8 +29,8 @@ class PeriodePendaftaranSeeder extends Seeder
             \App\Models\PeriodePendaftaran::create([
                 'jalur_pendaftaran_id' => 2,
                 'program_studi_id' => $program_studi->id,
-                'mulai' => '2024-07-29',
-                'berakhir' => '2024-07-31',
+                'mulai' => '2024-07-29 09:00:00',
+                'berakhir' => '2024-07-30 15:00:00',
             ]);
         }
 
@@ -39,8 +39,8 @@ class PeriodePendaftaranSeeder extends Seeder
             \App\Models\PeriodePendaftaran::create([
                 'jalur_pendaftaran_id' => 3,
                 'program_studi_id' => $program_studi->id,
-                'mulai' => '2024-08-01',
-                'berakhir' => '2024-08-02',
+                'mulai' => '2024-07-31 09:00:00',
+                'berakhir' => '2024-07-31 15:00:00',
             ]);
         }
     }

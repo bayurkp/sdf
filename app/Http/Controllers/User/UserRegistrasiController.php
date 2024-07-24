@@ -57,13 +57,13 @@ class UserRegistrasiController extends Controller
         $paket_pkkmb_kits = array(
             [
                 'paket' => 'Paket 1',
-                'harga' => 20_000,
+                'harga' => 25_000,
                 'deskripsi' => 'Buku Panduan, Kertas Resume',
             ],
             [
                 'paket' => 'Paket 2',
                 'harga' => 35_000,
-                'deskripsi' => 'Buku Panduan, Kertas Resume, Tali Nametag, Pulpen Hitam dan (warna prodi), Paper Bag',
+                'deskripsi' => 'Buku Panduan, Kertas Resume, Tali Nametag, Pulpen Hitam dan Biru, Paper Bag',
             ]
         );
 

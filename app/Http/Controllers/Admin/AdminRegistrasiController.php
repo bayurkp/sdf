@@ -78,7 +78,7 @@ class AdminRegistrasiController extends Controller
     public function downloadBuktiTransaksi($id): HttpFoundationResponse
     {
         $user = User::find($id);
-        $filename = "bukti-" . $user->nim . ".pdf";
+        $filename = 'bukti-' . $user->nim . '.' . pathinfo($user->bukti_transaksi, PATHINFO_EXTENSION);
         return response()->download(storage_path('/app/mahasiswa/bukti_transaksi/' . $user->bukti_transaksi), $filename);
     }
 

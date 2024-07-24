@@ -389,7 +389,7 @@
                                             <br />
                                             Arsitektur: Ita (087850166533)
                                             <br />
-                                            Teknik Sipil: Laura (081252759540)
+                                            Teknik Sipil: Olga (081238960123)
                                             <br />
                                             Teknik Mesin: Cantika (081999438444)
                                             <br />
