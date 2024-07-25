@@ -23,7 +23,7 @@
                 @csrf
                 <div class="table_section padding_infor_info">
                     <div class="mb-3">
-                        <label class="form-label">Nama <span style="color:#FF0000">*</span></label>
+                        <label class="form-label">Nama Prestasi <span style="color:#FF0000">*</span></label>
                         <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{old('nama') ? old('nama') : $prestasi->nama}}" spellcheck="disabled" required>
                         @error('nama')
                         <div class="invalid-feedback">{{$message}}</div>

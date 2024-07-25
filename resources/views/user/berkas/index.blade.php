@@ -44,7 +44,7 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Nama</th>
+                                <th>Nama Berkas</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
                         </thead>

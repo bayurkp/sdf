@@ -44,7 +44,7 @@
                 </div>
                 @elseif($user->status == 'Teregistrasi')
                 <div class="alert alert-success mb-0" role="alert" style="width:100%;">
-                    <i class="fa fa-check text-success"></i> Registrasi PKKMB FT {{date('Y')}} Berhasil.
+                    <i class="fa fa-check text-success"></i> Registrasi PKKMB FT {{date('Y')}} Berhasil. Silahkan masuk ke <i>group chat</i> via <a href={{ url("/group-chat") }} style="font-weight: 700">{{ url("/group-chat") }}</a>
                 </div>
                 @endif
 
@@ -131,6 +131,9 @@
                             @endif
                             @endforeach
                         </select>
+                        <small>
+                            * Sesuaikan jalur pendaftaran Universitas Udayana
+                        </small>
                         @error('jalur_pendaftaran_id')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -215,7 +218,9 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Tempat Lahir <span style="color:#FF0000">*</span></label>
-                        <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value="{{old('tempat_lahir') ? old('tempat_lahir') : $user->tempat_lahir}}" spellcheck="disabled" required>
+                        <input type="text" class="form-control @error('tempat_lahir') is-invalid
+                        @enderror" name="tempat_lahir" value="{{old('tempat_lahir') ? old('tempat_lahir') : $user->tempat_lahir}}" spellcheck="disabled" required>
+                        <small>*Contoh: Denpasar</small>
                         @error('tempat_lahir')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -223,6 +228,7 @@
                     <div class="mb-3">
                         <label class="form-label">Tanggal Lahir <span style="color:#FF0000">*</span></label>
                         <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir" value="{{old('tanggal_lahir') ? old('tanggal_lahir') : $user->tanggal_lahir}}" spellcheck="disabled" required>
+                        <small>*Contoh: 12/30/2006</small>
                         @error('tanggal_lahir')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -233,6 +239,13 @@
                         @error('alamat_asal')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
+                        <div class="mb-2">
+                            <small>
+                                *Format : Jalan/Banjar, Nomor, Desa, Kecamatan, Kabupaten/Kota, Provinsi
+                                <br/>
+                                *Contoh : Jl. Gadung Sari, No. 01, Penatih, Denpasar Timur, Denpasar, Bali
+                            </small>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Alamat Sekarang <span style="color:#FF0000">*</span></label>
@@ -240,10 +253,18 @@
                         @error('alamat_sekarang')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
+                        <div class="mb-2">
+                            <small>
+                                *Format : Jalan/Banjar, Nomor, Desa, Kecamatan, Kabupaten/Kota, Provinsi
+                                <br/>
+                                *Contoh : Jl. Gadung Sari, No. 01, Penatih, Denpasar Timur, Denpasar, Bali
+                            </small>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">No Telepon <span style="color:#FF0000">*</span></label>
-                        <input type="tel" class="form-control @error('no_telepon') is-invalid @enderror" name="no_telepon" value="{{old('no_telepon') ? old('no_telepon') : $user->no_telepon}}" spellcheck="disabled">
+                        <input type="tel" class="form-control @error('no_telepon') is-invalid @enderror" name="no_telepon" value="{{old('no_telepon') ? old('no_telepon') : $user->no_telepon}}" spellcheck="disabled" type="tel">
+                        <small>*Contoh: 081234567890</small>
                         @error('no_telepon')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -251,6 +272,7 @@
                     <div class="mb-3">
                         <label class="form-label">No HP <span style="color:#FF0000">*</span></label>
                         <input type="tel" class="form-control @error('no_hp') is-invalid @enderror" name="no_hp" value="{{old('no_hp') ? old('no_hp') : $user->no_hp}}" spellcheck="disabled" required>
+                        <small>*Contoh: 081234567890</small>
                         @error('no_hp')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -265,6 +287,7 @@
                     <div class="mb-3">
                         <label class="form-label">Email <span style="color:#FF0000">*</span></label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{old('email') ? old('email') : $user->email}}" spellcheck="disabled" required>
+                        <small>*Contoh: pkkmb@gmail.com</small>
                         @error('email')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -272,6 +295,7 @@
                     <div class="mb-3">
                         <label class="form-label">Asal Sekolah <span style="color:#FF0000">*</span></label>
                         <input type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" value="{{old('asal_sekolah') ? old('asal_sekolah') : $user->asal_sekolah}}" spellcheck="disabled" required>
+                        <small>*Contoh: SMA Negeri 1 Denpasar</small>
                         @error('asal_sekolah')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -362,9 +386,9 @@
                     </div>
                     <div class="mb-3">
                         @if($user->status == 'Belum registrasi')
-                        <label class="form-label">Bukti Transaksi<span style="color:#FF0000"> *</span></label>
+                        <label class="form-label">Bukti Transfer<span style="color:#FF0000"> *</span></label>
                         @else
-                        <label class="form-label">Bukti Transaksi</label>
+                        <label class="form-label">Bukti Transfer</label>
                         @endif
                         <div class="mb-2">
                             <table>
@@ -374,18 +398,29 @@
                                     </td>
                                     <td>
                                         <small>
-                                            Mohon untuk melakukan pembayaran sesuai dengan nominal ke nomor rekening berikut:
-                                            <br />
-                                            BNI 1448933532 a/n Ni Putu Intan Sri Diana
+                                            Pada catatan transfer, wajib mencantumkan <strong>NIM_Prodi</strong>
                                         </small>
                                     </td>
+                                </tr>
                                 <tr>
                                     <td style="padding-right: 10px; vertical-align: top;">
                                         *
                                     </td>
                                     <td>
                                         <small>
-                                            Setelah berhasil membayar, silakan unggah bukti transaksi dan konfirmasi ke kontak berikut:
+                                            Lakukan pembayaran sesuai dengan nominal ke nomor rekening berikut:
+                                            <br />
+                                            <strong>BNI 1448933532 a/n Ni Putu Intan Sri Diana</strong>
+                                        </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 10px; vertical-align: top;">
+                                        *
+                                    </td>
+                                    <td>
+                                        <small>
+                                            Setelah berhasil membayar, silakan unggah bukti transfer dan konfirmasi ke kontak berikut:
                                             <br />
                                             Arsitektur: Ita (087850166533)
                                             <br />
@@ -448,7 +483,7 @@
                                 Saya memiliki Prestasi Akademik / Non Akademik
                             </label>
                         </div>
-                        <small>* Dengan mencentang pilihan ini, Anda harus mengisi data pada menu organisasi dan/atau prestasi.</small>
+                        <small>*Dengan mencentang pilihan ini, Anda harus mengisi data pada menu organisasi dan/atau prestasi.</small>
                     </div>
                     @if($user->status == 'Belum registrasi')
                     <button style="width:100%;" type="button" data-toggle="modal" data-target="#konfirmasi" class="model_bt btn btn-primary mt-4">Ajukan Registrasi</button>
