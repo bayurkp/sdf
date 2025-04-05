@@ -1,3 +1,25 @@
+@php
+    function tanggal($tanggal) {
+        $bulan = array(1 =>
+            'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'Juli',
+            'Agustus',
+            'September',
+            'Oktober',
+            'November',
+            'Desember'
+        );
+
+        $split = explode('-', $tanggal);
+        return $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
+    }
+@endphp
+
 <!DOCTYPE html>
 <html>
 
@@ -81,14 +103,14 @@
 <body>
     <table class="tabel1">
         <tr>
-            <td rowspan="6" style='width: 5%;'><img src="{{ public_path('img/logo-unud.png') }}" alt="" height="100px" width="100px"></td>
+            <td rowspan="6" style='width: 5%;'><img src="{{ public_path('img/logo-unud.png') }}" alt="" height="80px" width="80px"></td>
             <td style='width: 90%;'>&nbsp;</td>
-            <td rowspan="6" style='width: 5%;'><img src="{{ public_path('img/logo-teknik.png') }}" alt="" height="100px" width="100px"></td>
+            <td rowspan="6" style='width: 5%;'><img src="{{ public_path('img/logo-teknik.png') }}" alt="" height="80px" width="80px"></td>
         </tr>
         <tr>
         </tr>
         <tr>
-            <td style='text-align: center; font-size:20px;'>PKKMB FT {{ date('Y') }}</td>
+            <td style='text-align: center; font-size:14px;'>Pengenalan Kehidupan Kampus Mahasiswa Baru {{ date('Y') }}</td>
         </tr>
         <tr>
             <td style='text-align: center; font-size:14px;'>FAKULTAS TEKNIK UNIVERSITAS UDAYANA</td>
@@ -107,7 +129,7 @@
     </table>
     <table class="tabel2">
         <tr>
-            <td colspan="8" style='text-align: center; font-size: 20px; font-weight:bold; border: 2px solid black; text-transform: uppercase;'>BIODATA MAHASISWA {{ $program_studi }}</td>
+            <td colspan="8" style='text-align: center; font-size: 20px; font-weight:bold; border: 2px solid black; text-transform: uppercase;'>BIODATA MAHASISWA ({{ $program_studi }})</td>
         </tr>
         <tr>
             <td colspan="1">Nama</td>
@@ -158,9 +180,10 @@
         </tr>
         <tr>
             <td colspan="1">Email</td>
-            <td colspan="7" class="hideextra">
+            <td colspan="3" class="hideextra">
                 {{ $user->email }}
             </td>
+            <td colspan="4" class="hideextra">ID Line: {{ $user->id_line }}</td>
         </tr>
         <tr>
             <td colspan="1">Minat Bakat</td>
@@ -206,8 +229,8 @@
             </td>
         </tr>
         <tr>
-            <td style='vertical-align: top;' colspan="1">Organisasi</td>
-            <td colspan="7" style='text-transform: uppercase;vertical-align: top;' class="hideextra">
+            <td style='vertical-align: top;' colspan="1">Pengalaman Berorganisasi</td>
+            <td colspan="7" style='text-transform: uppercase;vertical-align: middle;' class="hideextra">
                 @if(count($organisasis))
                 <?php $first = true ?>
                 @foreach($organisasis as $organisasi)
@@ -224,7 +247,7 @@
             </td>
         </tr>
         <tr>
-            <td style='vertical-align: top;' colspan="1">Prestasi</td>
+            <td style='vertical-align: top;' colspan="1">Prestasi yang Paling Menonjol</td>
             <td colspan="7" style='text-transform: uppercase; vertical-align: middle;' class="hideextra">
                 @if(count($prestasis))
                 <?php $first = true ?>
@@ -242,7 +265,7 @@
             </td>
         </tr>
         <tr>
-            <td style='vertical-align: top; ' colspan="1">Alasan Kuliah</td>
+            <td style='vertical-align: top; ' colspan="1">Alasan Kuliah di {{ $program_studi }}</td>
             <td colspan="7" style='text-transform: uppercase; vertical-align: middle;' class="hideextra">
                 {{ $user->alasan_kuliah }}
             </td>
@@ -261,7 +284,7 @@
         </tr>
         <tr>
             <td rowspan="8" colspan="2" style='vertical-align: top; padding-left: 50px; border-style: none;'><img src="{{ $user->pas_foto ? public_path('mahasiswa/pas_foto/'.$user->pas_foto) : public_path('img/foto3x4.jpg') }}" alt="" height=150px width=120px></td>
-            <td colspan="6" style='text-align: center; border-bottom:none; border-top:none; border-left:none;'>Denpasar, ___________________{{ date('Y') }}</td>
+            <td colspan="6" style='text-align: center; border-bottom:none; border-top:none; border-left:none;'>Denpasar, {{ tanggal(date('Y-m-d')) }}</td>
         </tr>
         <tr>
             <td colspan="6" style='text-align: center; border-style: none;'>Biodata diisi dengan sebenar-benarnya</td>

@@ -233,6 +233,13 @@
                         @error('alamat_asal')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
+                        <div class="mb-2">
+                            <small>
+                                *Format : Jalan/Banjar, Nomor, Desa, Kecamatan, Kabupaten/Kota, Provinsi
+                                <br/>
+                                *Contoh : Jl. Gadung Sari, No. 01, Penatih, Denpasar Timur, Denpasar, Bali
+                            </small>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Alamat Sekarang <span style="color:#FF0000">*</span></label>
@@ -240,6 +247,13 @@
                         @error('alamat_sekarang')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
+                        <div class="mb-2">
+                            <small>
+                                *Format : Jalan/Banjar, Nomor, Desa, Kecamatan, Kabupaten/Kota, Provinsi
+                                <br/>
+                                *Contoh : Jl. Gadung Sari, No. 01, Penatih, Denpasar Timur, Denpasar, Bali
+                            </small>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">No Telepon <span style="color:#FF0000">*</span></label>
@@ -374,11 +388,23 @@
                                     </td>
                                     <td>
                                         <small>
-                                            Mohon untuk melakukan pembayaran sesuai dengan nominal ke nomor rekening berikut:
+                                            Lakukan pembayaran sesuai dengan nominal ke nomor rekening berikut:
                                             <br />
                                             BNI 1448933532 a/n Ni Putu Intan Sri Diana
                                         </small>
                                     </td>
+                                <>
+                                <tr>
+                                    <td style="padding-right: 10px; vertical-align: top;">
+                                        *
+                                    </td>
+                                    <td>
+                                        <small>
+                                            Pada catatan transfer, wajib mencantumkan
+                                            <strong> NIM_Prodi</strong>
+                                        </small>
+                                    </td>
+                                </tr>    
                                 <tr>
                                     <td style="padding-right: 10px; vertical-align: top;">
                                         *
@@ -402,7 +428,6 @@
                                             Teknik Industri: Febryan (085158880221)
                                         </small>
                                     </td>
-                                </tr>
                                 </tr>
                             </table>
                         </div>
