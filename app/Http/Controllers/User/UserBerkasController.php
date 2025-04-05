@@ -32,8 +32,8 @@ class UserBerkasController extends Controller
     public function download($id): HttpFoundationResponse
     {
         $berkas = Berkas::find($id);
-        $filename = Str::slug($berkas->nama) . ".pdf";
-        return response()->download(storage_path('/app/berkas/' . $berkas->file_berkas), $filename);
+        $filepath = storage_path('app/berkas/' . $berkas->file_berkas);
+        return response()->download($filepath, $berkas->file_berkas);
     }
 
     public function biodata()

@@ -23,8 +23,9 @@
                 @csrf
                 <div class="table_section padding_infor_info">
                     <div class="mb-3">
-                        <label class="form-label">Nama <span style="color:#FF0000">*</span></label>
+                        <label class="form-label">Nama Organisasi <span style="color:#FF0000">*</span></label>
                         <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{old('nama') ? old('nama') : $organisasi->nama}}" spellcheck="disabled" required>
+                        <small>* Contoh: OSIS</small>
                         @error('nama')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -32,6 +33,7 @@
                     <div class="mb-3">
                         <label class="form-label">Jabatan <span style="color:#FF0000">*</span></label>
                         <input type="text" class="form-control @error('jabatan') is-invalid @enderror" name="jabatan" value="{{old('jabatan') ? old('jabatan') : $organisasi->jabatan}}" spellcheck="disabled" required>
+                        <small>* Contoh: Ketua</small>
                         @error('jabatan')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -39,6 +41,7 @@
                     <div class="mb-3">
                         <label class="form-label">Tahun <span style="color:#FF0000">*</span></label>
                         <input type="number" class="form-control @error('tahun') is-invalid @enderror" name="tahun" value="{{old('tahun') ? old('tahun') : $organisasi->tahun}}" spellcheck="disabled" required>
+                        <small>* Contoh: 2024</small>
                         @error('tahun')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror

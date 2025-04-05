@@ -20,7 +20,7 @@
         <div class="white_shd full margin_bottom_30">
             <div class="table_section padding_infor_info">
                 <div class="mb-3">
-                    <label class="form-label">Nama</label>
+                    <label class="form-label">Nama Organisasi</label>
                     <input type="text" class="form-control" value="{{$organisasi->nama}}" spellcheck="disabled" disabled readonly>
                 </div>
                 <div class="mb-3">

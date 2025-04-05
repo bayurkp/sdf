@@ -7,6 +7,7 @@
     <title>SMFT - PKKMB FT {{date('Y')}}</title>
     <link rel="stylesheet" href="{{url('/majesty/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{url('/majesty/vendors/base/vendor.bundle.base.css')}}">
+    <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url('/majesty/css/style.css')}}">
     <link rel="icon" type="image/png" href="{{url('img/icon.png')}}">
 </head>
@@ -21,7 +22,11 @@
                             <div class="brand-logo text-center">
                                 <img src="{{url('/img/logo-pkkmb-ft-2024.png')}}" alt="logo">
                             </div>
-                            <h4 class="text-center">PKKMB Fakultas Teknik {{date('Y')}}</h4>
+                            <h4 class="text-center mb-4">PKKMB Fakultas Teknik {{date('Y')}}</h4>
+                            <div class="alert alert-warning mb-0" role="alert" style="width:100%; display:flex; gap:10px; align-items:center">
+                                <i class="fa fa-info text-warning"></i>
+                                <div>Peserta hanya dapat mengakses web sesuai dengan jadwal yang telah ditentukan</div>
+                            </div>
                             <form class="pt-3" action="{{route('login')}}" method="POST">
                                 @csrf
                                 <div class="form-group">

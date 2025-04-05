@@ -55,7 +55,7 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Nama</th>
+                                <th>Nama Organisasi</th>
                                 <th>Jabatan</th>
                                 <th>Tahun</th>
                                 <th class="text-center">Aksi</th>

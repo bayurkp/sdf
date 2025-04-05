@@ -26,7 +26,7 @@
                         <h4>Ketentuan akun Telegram Peserta PKKMB FT 2024<span style="color:#FF0000">*</span></h4>
                         <ul class="ml-2 mb-2">
                             <li>- Foto profil peserta menggunakan pas foto yang di upload saat mengisi data registrasi</li>
-                            <li>- Nama akun peserta menggunakan format <strong>(Nama lengkap_Program studi)</strong></li>
+                            <li>- Nama akun peserta menggunakan format <strong>(Nama lengkap_FT)</strong></li>
                         </ul>
                         <div class="mb-2">
                             Peserta PKKMB FT 2024 hanya diperbolehkan masuk ke telegram “Peserta PKKMB FT 2024” dan program studi masing-masing dengan ketentuan sebagai berikut:

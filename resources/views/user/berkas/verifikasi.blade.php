@@ -229,8 +229,8 @@
             </td>
         </tr>
         <tr>
-            <td style='vertical-align: top;' colspan="1">Pengalaman Berorganisasi</td>
-            <td colspan="7" style='text-transform: uppercase;vertical-align: middle;' class="hideextra">
+            <td style='vertical-align: top;' colspan="1">Organisasi</td>
+            <td colspan="7" style='text-transform: uppercase;vertical-align: top;' class="hideextra">
                 @if(count($organisasis))
                 <?php $first = true ?>
                 @foreach($organisasis as $organisasi)

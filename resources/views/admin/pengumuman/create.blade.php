@@ -57,7 +57,7 @@
                         @error('file_pengumuman')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
-                        <small>*Format File: JPG, PNG, JPEG</small>
+                        <small>*Format File: PDF, JPG, PNG, JPEG</small>
                         <br>
                         <small>*Ukuran Maksimal File: 10 MB</small>
                     </div>
